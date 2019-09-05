@@ -6,7 +6,7 @@ if( isset($_SESSION['user_id']) ){
     header("location: /");
 }
 
-require 'database.php';
+require '..\conf\database.php';
 
 $message = '';
 
@@ -18,7 +18,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 	$stmt = $conn->prepare($sql);
 
 	$stmt->bindParam(':email', $_POST['email'],PDO::PARAM_STR, 255);
-	
+
 	$secure_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
 
@@ -62,7 +62,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 		<input type="password" placeholder="Your desired password" name="password">
 		<input type="password" placeholder="Confirm your password" name="password_confirm">
 		<input type="submit">
-		
+
 	</form>
 
 </body>

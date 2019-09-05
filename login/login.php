@@ -7,7 +7,7 @@ if( isset($_SESSION['user_id']) )
     header("location: /");
 }
 
-require 'database.php';
+require '..\conf\database.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])){
 
@@ -54,7 +54,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 		<input type="text" placeholder="Enter your email" name="email">
 		<input type="password" placeholder="and password" name="password">
 		<input type="submit">
-		
+
 	</form>
 
 </body>

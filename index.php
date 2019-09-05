@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'database.php';
+require '.\conf\database.php';
 
 if( isset($_SESSION['user_id']) ){
 
@@ -38,15 +38,15 @@ if( isset($_SESSION['user_id']) ){
 
 		<?= $_SESSION['user_id']; ?>
 		<h1>Please Login or Register</h1>
-		<a href="login.php">Login</a> or
-		<a href="register.php">Regiser</a>
+		<a href=".\login\login.php">Login</a> or
+		<a href=".\login\register.php">Regiser</a>
 
 	<?php else: ?>
 
 		<br />
 		Welcome <?= $user['email']; ?>
 		<br /><br />You are successfully logged in!
-		<br /><br /><a href="logout.php">Logout?</a>
+		<br /><br /><a href=".\login\logout.php">Logout?</a>
 
 	<?php endif; ?>
 
