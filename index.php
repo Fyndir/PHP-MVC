@@ -1,54 +1,26 @@
 <?php
-session_start();
 
-require '.\conf\database.php';
+/**
+*
+*/
+require 'lib/smarty-3.1.33/libs/Smarty.class.php';
+require 'lib/router/Router.class.php';
+require 'lib/checkers/checkers.php';
 
-if( isset($_SESSION['user_id']) ){
+$smarty = new Smarty();
+//$smarty->force_compile = true;
+$smarty->debugging = false;
+$smarty->caching = false;//mettre à true pour la production; attention aux droits d'écriture sur le serveur pour le répertoire de cache!
+$smarty->cache_lifetime = 0;//120
 
-	$records = $conn->prepare('SELECT id,email,password FROM  users WHERE id = :id');
-	$records->bindParam(':id', $_SESSION['user_id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$message = '';
-	$user = NULL;
-
-	if( count($results) > 0 ){
-		$user = $results;
-	}
-
+$action = "";
+if(isset($_GET["action"]) && check($_GET["action"],"chaineAlpha")==1){
+	$action = $_GET['action'];
 }
 
+$router = new Router($smarty,$action);
+
+$tpl = $router->processAction();
+
+$smarty->display($tpl);
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Welcome to your Web App</title>
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-
-	<div class="header">
-		<a href="/">Your App Name</a>
-	</div>
-
-	<?php if( !$user ): ?>
-
-		<?= $_SESSION['user_id']; ?>
-		<h1>Please Login or Register</h1>
-		<a href=".\login\login.php">Login</a> or
-		<a href=".\login\register.php">Regiser</a>
-
-	<?php else: ?>
-
-		<br />
-		Welcome <?= $user['email']; ?>
-		<br /><br />You are successfully logged in!
-		<br /><br /><a href=".\login\logout.php">Logout?</a>
-
-	<?php endif; ?>
-
-</body>
-</html>
