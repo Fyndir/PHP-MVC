@@ -1,4 +1,27 @@
-<!Doctype html>
+<?php
+/* Smarty version 3.1.33, created on 2019-09-14 09:51:44
+  from 'C:\wamp64\www\TLI4IRC\templates\defaut.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d7cb830a7a5d9_90070780',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7f8f133baf81408d8bf96acc2ac981d1b64b1efd' => 
+    array (
+      0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\defaut.tpl',
+      1 => 1568454694,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d7cb830a7a5d9_90070780 (Smarty_Internal_Template $_smarty_tpl) {
+?><!Doctype html>
 <html lang="fr">
 
     <head>
@@ -50,3 +73,5 @@
     </body>
 
 </html>
+<?php }
+}

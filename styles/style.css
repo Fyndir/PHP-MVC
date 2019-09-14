@@ -1,177 +1,105 @@
-aside{
-	
-	position:relative;
-	background: rgba(240,250,240,0.6);
-	
+h1 {
+    margin-top: -30px;
+    padding-top: 22px;
+    background: #8C0019;
+    color: #FFFFFF;
+    text-align: center;
+    border: 17px solid #8C0019;
+    width: 100%;
+    margin-left: -8px;
+    margin-bottom: -20px;
+    font-size: 60px;
+    padding-bottom: 25px;
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
 }
 
-aside ul{
-	
-	
-	
-}
-
-aside ul li{
-	
-	display:inline;
-	margin-left: 5%;
-	
-}
-
-ul.tabRep{
-	margin:0;
-	padding:0;
-	font-size: small;
-	text-align:center;
-}
-
-#recap{
-position:fixed;
-float:right;
-top:2%;
-right: 2%;
-margin-left: 1%;
-width: 25%;
-min-width:200px;
-clear:both;
-
-background: rgba(240,250,240,0.6);
-}
-
-#cmd{
-width:75%;
-min-width:400px;
-}
-
-body{
-	background: rgba(180,234,190,0.5);
-	background-image: url("zenBG-1.png"), url("zenBG-2.png");
-	background-repeat: repeat-x, repeat;
-}
-
-#content{
-background: rgba(240,250,240,0.6);
-min-width:640px;
-margin-left: 10%;
-margin-right: 10%;
-width: 75%;
-
-padding:1%;
-}
-
-p.info{
-	text-align:justify;
-	font-weight: bolder;
-	width: 50%;
-	color: brown;
-}
-
-p.warning{
-	text-align:justify;
-	font-weight: bolder;
-	color: brown;
+h2 {
+    font-size: 40px;
+    text-align: center;
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    border-bottom: 2px solid white;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 
-
-div#howto{
-	width: 50%;
-	text-align:justify;
+h3 {
+    font-size: 30px;
+    text-align: left;
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    width: 60%;
 }
 
-div.inputMer{
-	width: 20%;
-	float: left;
-	filter : alpha(opacity=50);
-	opacity : 1.6;
-	background: rgba(240,250,240,0.6);
+
+menu {
+    margin-top: 0;
+    background: #D50027;
+    text-align: center;
+    border-left: 10px solid #D50027;
+    border-right: 10px solid #D50027;
+    border-bottom: 4px solid #D50027;
+    width: 100%;
+    margin-left: -8px;
+    transform: translate(0, 0);
 }
 
-div.inputPatho{
-	background: rgba(240,250,240,0.6);	
+nav {
+    margin: 0;
+    padding: 0;
+    display: block;
+    padding: 10px;
 }
 
-div.actionPatho{
-	width: 30%;
-	margin-right: 1%;
-	padding: 1%;
-	float: left;
-	border: 1px solid gray;
-	background: rgba(240,250,240,0.6);
+nav a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 9%;
+    padding-right: 9%;
 }
 
-form li{
-	list-style:none;
+footer {
+    margin-top: 70px;
+    background: #8C0019;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    margin-left: -8px;
+    border: 17px solid #8C0019;
+    border-top: 3px solid #8C0019;
+    border-bottom: 1px solid #8C0019;
+    -webkit-transform: rotate(-0.5deg);
+    -ms-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
 }
 
-#questions input.search {
-padding: 0.5% 0.5%;
-width: 30%;
-height: 2%;
-border: 1px solid #AAA;
+
+
+
+
+
+
+#loginForm {
+    margin: auto;
+    color: black;
+    font-size: 20px;
 }
 
-#questions input.search:hover, #questions input.search:focus {
-border-color: #777;
-}
 
-#questions div.result {
-display: none;
-width: 31%;
-border: 1px solid #AAA;
-border-top-width: 0;
-background-color: #FFF;
-}
 
-div#questions div.result ul {
-	padding: 0.5% 0.5%;
-	text-align: left;
-	border: 0;
-	background-color: #FFF;
-	margin:0;
-}
-#questions li{
-list-style:none;
-}
-#questions div.result li{
-list-style:none;
-padding-left:1%;
-background-color: #FFF;
-}
 
-#questions div.result li:hover, #questions .result_focus {
-background-color: #DDD !important;
-}
 
-.error{
-	color:red;
+#Inscrivez-vous {
+  font-size:80%;
+  
+  
+  
 }
-.missing{
-	color:orange;
-}
-.good{
-	color:green;
-}
-
-.img{
-	float: left;
-	margin-right:5%;
-}
-.lsympt{
-	min-height: 350px;
-	margin-left: 5%;
-}
-
-.dev {
-	filter : alpha(opacity=50);
-	opacity : 0.6;
-}
-
-p.imgCmd{
-	text-align: center;
-}
-
-p.imgCmd img{
-	height: 150px;
-}
-

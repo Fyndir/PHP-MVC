@@ -1,4 +1,27 @@
-<!doctype html>
+<?php
+/* Smarty version 3.1.33, created on 2019-09-14 09:50:08
+  from 'C:\wamp64\www\TLI4IRC\templates\register.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d7cb7d09159d4_64201401',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'bfcad3cc012a33d3294873d63d78388845939c53' => 
+    array (
+      0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\register.tpl',
+      1 => 1568454605,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d7cb7d09159d4_64201401 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="fr">
 
     <head>
@@ -6,7 +29,9 @@
         <title>Login</title>
         <meta name="description" content="Projet">
         <link rel="stylesheet" href="styles/style.css">
-        <script type="text/javascript" src="js/script.js"></script>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="js/script.js"><?php echo '</script'; ?>
+>
     </head>
 
     <body >
@@ -70,3 +95,5 @@
     </body>
 
 </html>
+<?php }
+}
