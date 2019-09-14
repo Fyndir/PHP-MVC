@@ -6,9 +6,9 @@ define("MapCheck",array(
 	//à compléter
 									));
 
-/**
+/*
 	renvoie 0 si la chaine ne correspond pas à l'expression régulière permettant de vérifier qu'elle est conforme.
-	Les expressions régulières sont stockée dans la map $mapCheck et identifiée par la clef $chaine passée en paramètre 
+	Les expressions régulières sont stockée dans la map $mapCheck et identifiée par la clef $chaine passée en paramètre
 */
 function check($chaine, $clef){
 	$ret = 0;

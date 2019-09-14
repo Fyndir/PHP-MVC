@@ -11,8 +11,7 @@ class Router
 	private $smarty = null;
 	private $action = "";
 	const mapTpl = array(
-		"register" => "templates/register.tpl",
-		"login" => "templates/login.tpl"
+		"register" => "templates/register.tpl"	
 	);
 
 	function __construct($smarty,$action ){
@@ -25,7 +24,7 @@ class Router
 	function processAction(){
 		$ret = "templates/defaut.tpl";
 		if($this->action!=""){
-			$ret = Router::mapTpl[$this->action];			
+			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
 		return $ret;

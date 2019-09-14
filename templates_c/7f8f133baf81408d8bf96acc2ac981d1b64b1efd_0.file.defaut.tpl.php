@@ -1,54 +1,30 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-14 09:51:44
+/* Smarty version 3.1.33, created on 2019-09-14 10:44:18
   from 'C:\wamp64\www\TLI4IRC\templates\defaut.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d7cb830a7a5d9_90070780',
+  'unifunc' => 'content_5d7cc482d824d9_56174349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f8f133baf81408d8bf96acc2ac981d1b64b1efd' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\defaut.tpl',
-      1 => 1568454694,
+      1 => 1568457850,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d7cb830a7a5d9_90070780 (Smarty_Internal_Template $_smarty_tpl) {
-?><!Doctype html>
-<html lang="fr">
-
-    <head>
-        <meta charset="utf-8">
-        <title>Accueil</title>
-        <meta name="description" content="Projet">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    </head>
-
-    <body>
-
-        <header>
-            <h1>
-                Projet Fil Rouge - Groupe B1
-            </h1>
-            <menu>
-                <nav>
-                    <a href="?action">Accueil</a>
-                    <a href="?action=Recherche">Recherche</a>
-                </nav>
-            </menu>
-
-        </header>
-
-        <h2>Accueil</h2>
-        <h3>Se connecter</h3>
+function content_5d7cc482d824d9_56174349 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
         <form id="loginForm" action="../lib/login/login.php" method="POST">
@@ -65,13 +41,6 @@ function content_5d7cb830a7a5d9_90070780 (Smarty_Internal_Template $_smarty_tpl)
 
             <small id="errorMsg"></small>
         </form>
-
-        <footer>
-            <p>Site réalisé par le groupe B1 </p>
-        </footer>
-
-    </body>
-
-</html>
-<?php }
+<?php $_smarty_tpl->_subTemplateRender('file:footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

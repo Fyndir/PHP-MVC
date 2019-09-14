@@ -1,30 +1,4 @@
-<!doctype html>
-<html lang="fr">
-
-    <head>
-        <meta charset="utf-8">
-        <title>Login</title>
-        <meta name="description" content="Projet">
-        <link rel="stylesheet" href="styles/style.css">
-        <script type="text/javascript" src="js/script.js"></script>
-    </head>
-
-    <body >
-
-        <header>
-            <h1>
-                Projet Fil Rouge - Groupe B1
-            </h1>
-
-            <menu>
-                <nav>
-                    <a href="?action=">Accueil</a>
-                    <a href="?action=recherche">Recherche</a>
-                </nav>
-            </menu>
-
-        </header>
-
+{include file='header.tpl'}
 	<h2> Inscription </h2>
 
 	<form action="../lib/login/register.php" method="POST">
@@ -60,13 +34,4 @@
 			</td>
 		</tr>
 	</table>
-
-	</form>
-
-        <footer>
-            <p>Site réalisé par le groupe B1</p>
-        </footer>
-
-    </body>
-
-</html>
+  {include file='footer.tpl'}
