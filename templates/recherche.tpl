@@ -17,6 +17,9 @@
 
 </form>
 
+<ul id = 'searchResult'>
+
+</ul>
 
 <script type="module" src="js/pathos.js"></script>
 {include file='footer.tpl'}
