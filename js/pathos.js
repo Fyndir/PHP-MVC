@@ -1,21 +1,9 @@
+let searchForm = document.forms.patho_search;
 
-var checkflag = false;
-function check(id){
-	var field = document.getElementById(id).getElementsByTagName("input");
-	var ret= "Tout decocher";
-	if (checkflag == false){
-		for (i = 0; i < field.length; i++){
-			field[i].checked = true;
-		}
-		checkflag = true;
-	}
-	else{
-		for (i = 0; i < field.length; i++){
-			field[i].checked = false;
-		}
-		checkflag = false;
-		ret = "Tout cocher";
-	}
-	
-	return ret;
-}
+searchForm.addEventListener("submit", async function(event){
+	event.preventDefault();
+	var patho=searchForm.patho_choice.value;
+	var answer = await fetch("?API=recherche&search="+patho);
+	var data = await answer.json();
+	console.log(data);
+});

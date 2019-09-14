@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-14 10:45:39
+/* Smarty version 3.1.33, created on 2019-09-14 15:16:45
   from 'C:\wamp64\www\TLI4IRC\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d7cc4d3cbd6e2_69255556',
+  'unifunc' => 'content_5d7d045dc30ba5_79302750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9cf568cf8f8db9eb0ccf0b239e5305e219dc8fdb' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\header.tpl',
-      1 => 1568457936,
+      1 => 1568474201,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d7cc4d3cbd6e2_69255556 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d7d045dc30ba5_79302750 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -41,7 +41,7 @@ function content_5d7cc4d3cbd6e2_69255556 (Smarty_Internal_Template $_smarty_tpl)
             <menu>
                 <nav>
                     <a href="?action">Accueil</a>
-                    <a href="?action=Recherche">Recherche</a>
+                    <a href="?action=recherche">Recherche</a>
                 </nav>
             </menu>
 

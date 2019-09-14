@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-14 15:13:55
+/* Smarty version 3.1.33, created on 2019-09-14 15:13:33
   from 'C:\wamp64\www\TLI4IRC\templates\defaut.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d7d03b3ead071_46500411',
+  'unifunc' => 'content_5d7d039d4f63d1_30472888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f8f133baf81408d8bf96acc2ac981d1b64b1efd' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\defaut.tpl',
-      1 => 1568474032,
+      1 => 1568473960,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d7d03b3ead071_46500411 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d7d039d4f63d1_30472888 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,7 +42,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
             <small id="errorMsg"></small>
         </form>
 
-        
+        $userFirstName
 <?php $_smarty_tpl->_subTemplateRender('file:footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

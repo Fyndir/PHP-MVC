@@ -5,13 +5,15 @@
 	Vous pouvez également créer d'autres classes spécifiant chaque routage particulier
 	ou plus simplement mais moins proprement commencer par gérer ici toutes les routes
 */
-
+require 'Controller/SearchController.php';
 class Router
 {
 	private $smarty = null;
 	private $action = "";
 	const mapTpl = array(
-		"register" => "templates/register.tpl"
+		"register" => "templates/register.tpl",
+		"login" => "templates/loguser.tpl",
+		"recherche" => "templates/recherche.tpl"
 	);
 
 	function __construct($smarty,$action ){
@@ -23,27 +25,37 @@ class Router
 
 	function processAction(){
 		$ret = "templates/defaut.tpl";
-		if($this->action!=""){
-			$ret = Router::mapTpl[$this->action];
-			$this->todo();
-		}
-		if($this->="login")
+		if($this->action!="")
 		{
-			$user=$_POST['login'];
-			$password=$_POST['password'];
+			$ret = Router::mapTpl[$this->action];
+		}
+		if($this->action="login")
+		{
+			if(!empty($_POST['login']) && !empty($_POST['password']))
+			{
+				$user=$_POST['login'];
+				$password=$_POST['password'];
+			}
 			// appeler le controller pour utiliser la methode de log qui retourne un seul user
 			// affecter l'user au template loguser ou le mettre en varaible de session ????
 		}
-
+		if($this->action="recherche")
+			{
+				$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
+				// RAF : charge keyword + les autres dans des var
+			}
 		return $ret;
 	}
 
-	function todo(){
-		//ne doit pas être ici mais faire appel à la librairie pour obtenir les assignations correctes
-		// le mieux est l'utilisation d'un controleur appelé par le routeur,
-		// contrôleur qui sera chargé d'appeller les bonnes librairies (BD par exemple) pour faire les assignations.
-		$this->smarty->assign("userFirstName",get_current_user());//voir https://www.php.net/manual/fr/function.get-current-user.php
+	function processAPI(){
+		if($this->action="recherche")
+		{
+			return SearchControler::SearchPatho($_GET['search']);
+		}
+
 	}
+
+
 }
 
 ?>

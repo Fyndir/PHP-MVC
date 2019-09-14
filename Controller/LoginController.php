@@ -1,6 +1,6 @@
 <?php
 
-  require('../lib/bd/bd.class.php');
+  require('lib/bd/bd.class.php');
 	class LoginControler
   {
     public static Function login($user,$password)

@@ -79,6 +79,8 @@ footer {
     -webkit-transform: rotate(-0.5deg);
     -ms-transform: rotate(-0.5deg);
     transform: rotate(-0.5deg);
+    position: fixed;
+    bottom: 0;
 }
 
 
@@ -99,7 +101,7 @@ footer {
 
 #Inscrivez-vous {
   font-size:80%;
-  
-  
-  
+
+
+
 }

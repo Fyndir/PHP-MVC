@@ -1,8 +1,6 @@
 <?php
 
-/**
-*
-*/
+
 session_start();
 require 'lib/smarty-3.1.33/libs/Smarty.class.php';
 require 'lib/router/Router.class.php';
@@ -15,13 +13,30 @@ $smarty->caching = false;//mettre à true pour la production; attention aux droi
 $smarty->cache_lifetime = 0;//120
 
 $action = "";
-if(isset($_GET["action"]) && check($_GET["action"],"chaineAlpha")==1){
+$API = false;
+
+if(isset($_GET["action"]) && check($_GET["action"],"chaineAlpha")==1)
+{
 	$action = $_GET['action'];
+}
+
+if(isset($_GET["API"]) && check($_GET["API"],"chaineAlpha")==1)
+{
+	$action = $_GET['API'];
+	$API=true;
 }
 
 $router = new Router($smarty,$action);
 
-$tpl = $router->processAction();
+if ($API)
+{
+	$result=$router->processAPI();
+	echo json_encode($result);
+}
+else
+{
+	$tpl = $router->processAction();
+	$smarty->display($tpl);
+}
 
-$smarty->display($tpl);
 ?>

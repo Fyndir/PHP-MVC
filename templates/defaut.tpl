@@ -15,4 +15,6 @@
 
             <small id="errorMsg"></small>
         </form>
+
+        
 {include file='footer.tpl'}

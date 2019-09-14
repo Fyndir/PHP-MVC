@@ -18,7 +18,7 @@
             <menu>
                 <nav>
                     <a href="?action">Accueil</a>
-                    <a href="?action=Recherche">Recherche</a>
+                    <a href="?action=recherche">Recherche</a>
                 </nav>
             </menu>
 

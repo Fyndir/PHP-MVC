@@ -2,7 +2,7 @@
 
 	class BD{
 
-		private $dbName = "file_rougge";//mettre le nom de votre base de donnée
+		private $dbName = "file_rouge";//mettre le nom de votre base de donnée
 		private $pass = ""; //donnez le mot de passe de votre bd
 		private $user = "root"; //donnez le nom d'utilisateur de la bd (probablement "root")
 
