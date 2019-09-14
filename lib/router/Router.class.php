@@ -11,7 +11,7 @@ class Router
 	private $smarty = null;
 	private $action = "";
 	const mapTpl = array(
-		"register" => "templates/register.tpl"	
+		"register" => "templates/register.tpl"
 	);
 
 	function __construct($smarty,$action ){
@@ -27,6 +27,14 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
+		if($this->="login")
+		{
+			$user=$_POST['login'];
+			$password=$_POST['password'];
+			// appeler le controller pour utiliser la methode de log qui retourne un seul user
+			// affecter l'user au template loguser ou le mettre en varaible de session ????
+		}
+
 		return $ret;
 	}
 

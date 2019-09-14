@@ -1,7 +1,7 @@
 {include file='header.tpl'}
 
 
-        <form id="loginForm" action="../lib/login/login.php" method="POST">
+        <form id="loginForm" action="?action=login" method="POST">
             <label for="login">Login :</label><br/>
             <input type="text" name="login" id="login"><br/><br/>
 

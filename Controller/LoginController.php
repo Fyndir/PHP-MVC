@@ -9,8 +9,6 @@
       	$resultat = $maBD->requete("SELECT id FROM user where mail= $login and password=$password;");
       	print_r($resultat);
     }
-
-
   }
 
 ?>
