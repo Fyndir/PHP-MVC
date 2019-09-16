@@ -1,5 +1,5 @@
 <?PHP
-require('lib/bd/bd.class.php');
+require_once('lib/bd/bd.class.php');
 class SearchControler
 {
   public static Function GetAllPatho()

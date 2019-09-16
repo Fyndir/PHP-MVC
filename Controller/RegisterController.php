@@ -1,6 +1,6 @@
 <?php
 
-  require('lib/bd/bd.class.php');
+  require_once('lib/bd/bd.class.php');
 	class RegisterControler
   {
     public static Function AddUser($user,$password)

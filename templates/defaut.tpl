@@ -1,6 +1,5 @@
 {include file='header.tpl'}
 
-
         <form id="loginForm" action="?action=login" method="POST">
             <label for="login">Login :</label><br/>
             <input type="text" name="login" id="login"><br/><br/>
@@ -15,6 +14,5 @@
 
             <small id="errorMsg"></small>
         </form>
-
-        
+{include file='errorMsg.tpl'}
 {include file='footer.tpl'}

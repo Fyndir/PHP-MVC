@@ -22,4 +22,6 @@
 </ul>
 
 <script type="module" src="js/pathos.js"></script>
+
+{include file='errorMsg.tpl'}
 {include file='footer.tpl'}

@@ -1,18 +1,13 @@
 <?php
-/*
-	Routeur de base
-	Mettre à jour la map mapTpl pour l'ajout d'une nouvelle vue
-	Vous pouvez également créer d'autres classes spécifiant chaque routage particulier
-	ou plus simplement mais moins proprement commencer par gérer ici toutes les routes
-*/
-require 'Controller/SearchController.php';
+
+require_once 'Controller/SearchController.php';
+require_once 'Controller/LoginController.php';
 class Router
 {
 	private $smarty = null;
 	private $action = "";
 	const mapTpl = array(
 		"register" => "templates/register.tpl",
-		"login" => "templates/loguser.tpl",
 		"recherche" => "templates/recherche.tpl"
 	);
 
@@ -23,21 +18,55 @@ class Router
 		}
 	}
 
+/// Permet de renvoyer les templates en fonction du parametre action
 	function processAction(){
 		$ret = "templates/defaut.tpl";
+		$this->smarty->assign("ErrorMessage","");
 		if($this->action!="")
 		{
 			$ret = Router::mapTpl[$this->action];
 		}
 		if($this->action="login")
 		{
-			if(!empty($_POST['login']) && !empty($_POST['password']))
+			if(!empty($_POST['login']) && !empty($_POST['pwd']))
 			{
 				$user=$_POST['login'];
-				$password=$_POST['password'];
+				$password=$_POST['pwd'];
+				$result=LoginControler::login($user,$password);
+			  if (empty($result))
+				{
+					$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas");
+				}
+				else
+				{
+					$_session['user'] = $result;
+				}
 			}
-			// appeler le controller pour utiliser la methode de log qui retourne un seul user
-			// affecter l'user au template loguser ou le mettre en varaible de session ????
+		}
+		if($this->action="AddUser")
+		{
+			if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm'];))
+			{
+				$user=$_POST['email'];
+				$password=$_POST['password'];
+				$password_confirm=$_POST['password_confirm'];
+				if(($password=$password_confirm))
+					{
+						//pas besoin de template parce qu'on va sur le default
+						RegisterControler::AddUser($user,$password);
+					}
+					else
+					{
+						$this->smarty->assign("ErrorMessage","Les deux mot de passe ne sont identiques");
+						$ret = "templates/register.tpl";
+					}
+				else
+				{
+						$this->smarty->assign("ErrorMessage","Les parametres sont mal renseigner");
+						$ret = "templates/register.tpl";
+				}
+		}
+
 		}
 		if($this->action="recherche")
 			{
@@ -47,6 +76,7 @@ class Router
 		return $ret;
 	}
 
+  /// Permet de renvoyer les resultats des recherches en json
 	function processAPI(){
 		if($this->action="recherche")
 		{

@@ -1,7 +1,7 @@
 {include file='header.tpl'}
 	<h2> Inscription </h2>
 
-	<form action="../lib/login/register.php" method="POST">
+	<form action="?action=AddUser" method="POST">
 		<table>
 		<tr>
 	  	<td>
@@ -34,4 +34,5 @@
 			</td>
 		</tr>
 	</table>
+	{include file='errorMsg.tpl'}
   {include file='footer.tpl'}
