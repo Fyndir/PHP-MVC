@@ -31,7 +31,7 @@ $router = new Router($smarty,$action);
 if ($API)
 {
 	$result=$router->processAPI();
-	echo json_encode($result);
+	echo $result;
 }
 else
 {

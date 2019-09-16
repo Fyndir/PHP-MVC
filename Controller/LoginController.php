@@ -5,7 +5,7 @@
   {
     public static Function login($user,$password)
     {
-        $password=_hash($password,PASSWORD_BCRYPT);
+        $password=password_hash($password,PASSWORD_BCRYPT);
       	$maBD = new BD();
       	$resultat = $maBD->requete("SELECT id FROM users where email='$user' and password='$password';");
       	return $resultat;
