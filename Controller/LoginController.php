@@ -5,9 +5,14 @@
   {
     public static Function login($user,$password)
     {
-        $password=password_hash($password,PASSWORD_BCRYPT);
       	$maBD = new BD();
-      	$resultat = $maBD->requete("SELECT id FROM users where email='$user' and password='$password';");
+      	$resultat = $maBD->requete("SELECT password FROM users where email='$user';");
+        $bddPass=$resultat[0][0];
+        if (password_verify($bddPass,$password))
+        {
+          $resultat=$maBD->requete("SELECT * FROM users where email='$user';");
+          //var_dump($resultat);
+        }
       	return $resultat;
     }
 

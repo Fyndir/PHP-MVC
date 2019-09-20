@@ -41,19 +41,22 @@ class Router
 				$password=$_POST['pwd'];
 				$result=LoginControler::login($user,$password);
 			  if (empty($result))
-				{
-					$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
-				}
+					{
+						$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
+					}
 				else
-				{
+					{
 					// Pas sur que ce soit la bonne méthode
-					$_session['user'] = $result;
+						$_session['user'] = $result;
+					}
 				}
-			}
+
+			/*	NE MARCHE PAS ET JE SAIS PAS PK !!!!!!!!!!!
 			else
 			{
 					$this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
 			}
+			*/
 		}
 
 		if($this->action='AddUser')
@@ -101,7 +104,6 @@ class Router
 		{
 			$result=SearchControler::SearchPatho($_GET['search']);
 		}
-
 		return json_encode($result);
 
 	}
