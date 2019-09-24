@@ -11,9 +11,6 @@ h1
     margin-bottom: -20px;
     font-size: 60px;
     padding-bottom: 25px;
-    -webkit-transform: rotate(-1deg);
-    -ms-transform: rotate(-1deg);
-    transform: rotate(-1deg);
 }
 
 h2

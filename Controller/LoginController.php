@@ -6,9 +6,10 @@
     public static Function login($user,$password)
     {
       	$maBD = new BD();
-      	$resultat = $maBD->requete("SELECT password FROM users where email='$user';");
-        $bddPass=$resultat[0][0];
-        if (password_verify($bddPass,$password))
+      	$verifPassword = $maBD->requete("SELECT password FROM users where email='$user';");
+        $bddPass=$verifPassword[0][0];
+        $resultat=null;
+        if (password_verify($password,$bddPass))
         {
           $resultat=$maBD->requete("SELECT * FROM users where email='$user';");
           //var_dump($resultat);

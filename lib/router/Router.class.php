@@ -27,6 +27,7 @@ class Router
 /// Permet de renvoyer les templates en fonction du parametre action
 	function processAction()
 	{
+		//var_dump($this->action);
 		$ret = "templates/defaut.tpl";
 		$this->smarty->assign("ErrorMessage","");
 		if($this->action!="")
@@ -35,57 +36,60 @@ class Router
 		}
 		if($this->action="login")
 		{
-			if(!empty($_POST['login']) && !empty($_POST['pwd']))
+			if(isset($_POST['login']) && isset($_POST['pwd']))
 			{
-				$user=$_POST['login'];
-				$password=$_POST['pwd'];
-				$result=LoginControler::login($user,$password);
-			  if (empty($result))
-					{
-						$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
+				if(!empty($_POST['login']) && !empty($_POST['pwd']))
+				{
+					$user=$_POST['login'];
+					$password=$_POST['pwd'];
+					$result=LoginControler::login($user,$password);
+					if (empty($result))
+						{
+							$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
+							header("Location: /");
+						}
+					else
+						{
+						// Pas sur que ce soit la bonne méthode
+							$_session['user'] = $result;
+						}
 					}
-				else
+					else
 					{
-					// Pas sur que ce soit la bonne méthode
-						$_session['user'] = $result;
+						$this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
 					}
-				}
-
-			/*	NE MARCHE PAS ET JE SAIS PAS PK !!!!!!!!!!!
-			else
-			{
-					$this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
 			}
-			*/
+
 		}
 
 		if($this->action='AddUser')
 		{
-			if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']))
+			if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']))
 			{
-				$user=$_POST['email'];
-				$password=$_POST['password'];
-				$password_confirm=$_POST['password_confirm'];
-				if(($password=$password_confirm))
-					{
-						//pas besoin de template parce qu'on va sur le default
-						RegisterControler::AddUser($user,$password);
-						// pour eviter l'injection en masse
-						$this->action='';
+				if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']))
+				{
+					$user=$_POST['email'];
+					$password=$_POST['password'];
+					$password_confirm=$_POST['password_confirm'];
+					if(($password=$password_confirm))
+						{
+							//pas besoin de template parce qu'on va sur le default
+							RegisterControler::AddUser($user,$password);
+							// pour eviter l'injection en masse
+							$this->action='';
+						}
+						else
+						{
+							$this->smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
+							$ret = Router::mapTpl["register"];
+						}
 					}
 					else
 					{
-						$this->smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
-						$ret = Router::mapTpl["register"];
+							$this->smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
+							$ret = Router::mapTpl["register"];
 					}
-				}
-				/* NE MARCHE PAS ET JE SAIS PAS PK !!!!!!!!!!!
-				else
-				{
-						$this->smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
-						$ret = Router::mapTpl["register"];
-				}
-				*/
+			}
 		}
 
 		if($this->action="recherche")

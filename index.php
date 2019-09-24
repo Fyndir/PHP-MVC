@@ -18,12 +18,14 @@ $API = false;
 if(isset($_GET["action"]) && check($_GET["action"],"chaineAlpha")==1)
 {
 	$action = $_GET['action'];
+//	var_dump($action);
 }
 
 if(isset($_GET["API"]) && check($_GET["API"],"chaineAlpha")==1)
 {
 	$action = $_GET['API'];
 	$API=true;
+//	var_dump($action);
 }
 
 $router = new Router($smarty,$action);

@@ -8,7 +8,7 @@
     		<label for="email">Mail <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="text" placeholder="Enter your email" name="email">
+					<input type="email" placeholder="Enter your email" name="email">
 	 		</td>
 		</tr>
 	</br>
