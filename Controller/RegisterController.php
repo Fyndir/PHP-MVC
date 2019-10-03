@@ -9,13 +9,13 @@
       if(!empty($Mail) && !empty($password) && !empty($Nom) && !empty($Prenom))
       {
         $secure_password=password_hash($password, PASSWORD_BCRYPT);
-      	$sql = "INSERT INTO users (email,password,nom,prenom) VALUES ('$Mail','$secure_password','$Nom','$Prenom')";
+      	$sql = "INSERT INTO users (email,password,nom,prenom,is_admin) VALUES ('$Mail','$secure_password','$Nom','$Prenom',0)";
         $maBD = new BD();
         $resultat = $maBD->requete($sql);
       }
     }
 
-    public static Function register()
+    public static Function register($smarty)
     {
       if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']) && isset($_POST['Nom']) && isset($_POST['Prenom']))
       {
@@ -34,16 +34,15 @@
             }
             else
             {
-              $this->smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
-              $ret = Router::mapTpl["register"];
+              $smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
             }
           }
           else
           {
-              $this->smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
-              $ret = Router::mapTpl["register"];
+              $smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
           }
       }
+      return $smarty;
     }
   }
 

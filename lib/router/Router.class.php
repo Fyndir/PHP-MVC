@@ -37,12 +37,12 @@ class Router
 
 		if($this->action=="login")
 		{
-			LoginControler::log();
+			$this->smarty=LoginControler::login($this->smarty);
 		}
 
 		if($this->action=='AddUser')
 		{
-			RegisterControler::register();
+			$this->smarty=RegisterControler::register($this->smarty);
 		}
 
 

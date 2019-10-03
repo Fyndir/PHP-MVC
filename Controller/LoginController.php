@@ -3,7 +3,7 @@
   require_once('lib/bd/bd.class.php');
 	class LoginControler
   {
-    public static Function login($user,$password)
+    public static Function log_user($user,$password)
     {
       	$maBD = new BD();
       	$verifPassword = $maBD->requete("SELECT password FROM users where email='$user';");
@@ -19,17 +19,13 @@
 
 		public static Function logout()
 		{
-      var_dump($_SESSION['USER']);
 			session_start();
-
 			session_unset();
-
 			session_destroy();
-
 			header("Location: /");
 		}
 
-    public static Function log()
+    public static Function login($smarty)
     {
       if(isset($_POST['login']) && isset($_POST['pwd']))
       {
@@ -37,24 +33,24 @@
         {
           $user=$_POST['login'];
           $password=$_POST['pwd'];
-          $result=LoginControler::login($user,$password);
+          $result=LoginControler::log_user($user,$password);
           if (empty($result))
             {
-              $this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
+              $smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
               header("Location: /");
             }
           else
             {
-            // Pas sur que ce soit la bonne méthode
               $_SESSION['user'] = $result;
               //var_dump(	$_SESSION['user'] );
             }
           }
           else
           {
-            $this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
+            $smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
           }
       }
+      return $smarty;
     }
   }
 

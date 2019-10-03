@@ -2478,3 +2478,5 @@ create table users
     password varchar(250),
     role int
   )
+
+  insert into users(nom,prenom,email,password,is_admin) values ('admin','admin','admin@monserveur.fr','',1);
