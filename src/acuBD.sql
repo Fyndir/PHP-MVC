@@ -2468,3 +2468,13 @@ INSERT INTO `symptPatho` (`idS`, `idP`, `aggr`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+create table users
+  (
+    nom varchar(250),
+    prenom varchar(250),
+    email varchar(250),
+    password varchar(250),
+    role int
+  )

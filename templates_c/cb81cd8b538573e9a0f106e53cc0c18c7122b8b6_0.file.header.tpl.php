@@ -1,4 +1,27 @@
-<!Doctype html>
+<?php
+/* Smarty version 3.1.33, created on 2019-10-03 13:05:17
+  from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d95f20d089db2_33825283',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'cb81cd8b538573e9a0f106e53cc0c18c7122b8b6' => 
+    array (
+      0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\header.tpl',
+      1 => 1570107912,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d95f20d089db2_33825283 (Smarty_Internal_Template $_smarty_tpl) {
+?><!Doctype html>
 <html lang="fr">
 
     <head>
@@ -15,7 +38,7 @@
             <h1>
                 Projet Fil Rouge - Groupe B1
             </h1>
-            {if (empty($ConnectedUser))}
+            <?php if ((empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
                     <form id="loginForm" action="?action=login" method="POST">
                         <label for="login">Login :</label>
                         <input type="text" name="login" id="login">
@@ -30,10 +53,12 @@
 
                         <small id="errorMsg"></small>
                     </form>
-              {else}
-                <label id="lbhellouser">Bonjour {$ConnectedUser.prenom} {$ConnectedUser.nom}</label>
+              <?php } else { ?>
+                <label id="lbhellouser">Bonjour <?php echo $_smarty_tpl->tpl_vars['ConnectedUser']->value['prenom'];?>
+ <?php echo $_smarty_tpl->tpl_vars['ConnectedUser']->value['nom'];?>
+</label>
                 <a href="?action=logout">Deconnexion</a>
-              {/if}
+              <?php }?>
             <menu>
                 <nav>
                     <a href="?action">Accueil</a>
@@ -42,3 +67,5 @@
             </menu>
 
         </header>
+<?php }
+}

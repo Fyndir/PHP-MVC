@@ -12,16 +12,11 @@ class Router
 	// permet de factoriser le code
 	const mapTpl = array(
 		"register" => "templates/register.tpl",
-		"recherche" => "templates/recherche.tpl"
 	);
 
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
-		if(isset(Router::mapTpl[$action]))
-		{
-				$this->action = $action;
-		}
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
@@ -34,7 +29,6 @@ class Router
 		{
 			$ret = Router::mapTpl[$this->action];
 		}
-		if($this->action="login")
 		{
 			if(isset($_POST['login']) && isset($_POST['pwd']))
 			{
@@ -51,7 +45,6 @@ class Router
 					else
 						{
 						// Pas sur que ce soit la bonne méthode
-							$_session['user'] = $result;
 						}
 					}
 					else
@@ -62,7 +55,6 @@ class Router
 
 		}
 
-		if($this->action='AddUser')
 		{
 			if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']))
 			{
@@ -76,7 +68,6 @@ class Router
 							//pas besoin de template parce qu'on va sur le default
 							RegisterControler::AddUser($user,$password);
 							// pour eviter l'injection en masse
-							$this->action='';
 						}
 						else
 						{
@@ -92,7 +83,6 @@ class Router
 			}
 		}
 
-		if($this->action="recherche")
 		{
 				$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
 				// RAF : charge keyword + les autres dans des var

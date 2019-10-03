@@ -14,11 +14,12 @@
           $resultat=$maBD->requete("SELECT * FROM users where email='$user';");
           //var_dump($resultat);
         }
-      	return $resultat;
+      	return $resultat[0];
     }
 
 		public static Function logout()
 		{
+      var_dump($_SESSION['USER']);
 			session_start();
 
 			session_unset();
