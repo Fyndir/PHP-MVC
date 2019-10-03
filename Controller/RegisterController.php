@@ -14,6 +14,37 @@
         $resultat = $maBD->requete($sql);
       }
     }
+
+    public static Function register()
+    {
+      if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']) && isset($_POST['Nom']) && isset($_POST['Prenom']))
+      {
+        if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['Nom']) && !empty($_POST['Prenom']))
+        {
+          $Mail=$_POST['email'];
+          $password=$_POST['password'];
+          $password_confirm=$_POST['password_confirm'];
+          $Nom= $_POST['Nom'];
+          $Prenom = $_POST['Prenom'];
+          if(($password=$password_confirm))
+            {
+              RegisterControler::AddUser($Mail,$password,$Nom,$Prenom);
+              // pour eviter l'injection en masse
+              header("Location: /");
+            }
+            else
+            {
+              $this->smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
+              $ret = Router::mapTpl["register"];
+            }
+          }
+          else
+          {
+              $this->smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
+              $ret = Router::mapTpl["register"];
+          }
+      }
+    }
   }
 
 ?>

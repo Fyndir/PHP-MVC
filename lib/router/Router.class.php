@@ -37,63 +37,12 @@ class Router
 
 		if($this->action=="login")
 		{
-
-			if(isset($_POST['login']) && isset($_POST['pwd']))
-			{
-				if(!empty($_POST['login']) && !empty($_POST['pwd']))
-				{
-					$user=$_POST['login'];
-					$password=$_POST['pwd'];
-					$result=LoginControler::login($user,$password);
-					if (empty($result))
-						{
-							$this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
-							header("Location: /");
-						}
-					else
-						{
-						// Pas sur que ce soit la bonne méthode
-							$_SESSION['user'] = $result;
-							//var_dump(	$_SESSION['user'] );
-						}
-					}
-					else
-					{
-						$this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
-					}
-			}
-
+			LoginControler::log();
 		}
 
 		if($this->action=='AddUser')
 		{
-			if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']) && isset($_POST['Nom']) && isset($_POST['Prenom']))
-			{
-				if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['Nom']) && !empty($_POST['Prenom']))
-				{
-					$Mail=$_POST['email'];
-					$password=$_POST['password'];
-					$password_confirm=$_POST['password_confirm'];
-					$Nom= $_POST['Nom'];
-					$Prenom = $_POST['Prenom'];
-					if(($password=$password_confirm))
-						{
-							RegisterControler::AddUser($Mail,$password,$Nom,$Prenom);
-							// pour eviter l'injection en masse
-							header("Location: /");
-						}
-						else
-						{
-							$this->smarty->assign("ErrorMessage","Les deux mots de passe ne sont identiques");
-							$ret = Router::mapTpl["register"];
-						}
-					}
-					else
-					{
-							$this->smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
-							$ret = Router::mapTpl["register"];
-					}
-			}
+			RegisterControler::register();
 		}
 
 

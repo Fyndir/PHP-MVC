@@ -28,6 +28,34 @@
 
 			header("Location: /");
 		}
+
+    public static Function log()
+    {
+      if(isset($_POST['login']) && isset($_POST['pwd']))
+      {
+        if(!empty($_POST['login']) && !empty($_POST['pwd']))
+        {
+          $user=$_POST['login'];
+          $password=$_POST['pwd'];
+          $result=LoginControler::login($user,$password);
+          if (empty($result))
+            {
+              $this->smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");
+              header("Location: /");
+            }
+          else
+            {
+            // Pas sur que ce soit la bonne méthode
+              $_SESSION['user'] = $result;
+              //var_dump(	$_SESSION['user'] );
+            }
+          }
+          else
+          {
+            $this->smarty->assign("ErrorMessage","Les parametres ne sont pas saisies");
+          }
+      }
+    }
   }
 
 ?>
