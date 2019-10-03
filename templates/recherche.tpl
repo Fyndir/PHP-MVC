@@ -7,8 +7,9 @@
 <datalist id="patho-list">
   {foreach from=$ArrayPatho item=patho}
     <option value="{$patho.desc}"/>
-{/foreach}
+    {/foreach}
 </datalist>
+
 
 <!-- RAF : charge keyword + les autres dans des <datalist> -->
 <button type="submit">Rechercher</button>

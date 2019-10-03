@@ -8,14 +8,14 @@
 						<label for="nom"> Nom <span class="formStar">*</span> :</label>
 				</td>
 				<td>
-						<input  placeholder="Nom" name="Nom">
+						<input required placeholder="Nom" name="Nom">
 				</td>
 		  </tr>
 			<td>
 					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input  placeholder="Prenom" name="Prenom">
+					<input requiredrequired placeholder="Prenom" name="Prenom">
 			</td>
 		</tr>
 		<tr>
@@ -23,7 +23,7 @@
     		<label for="email">Mail <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="email" placeholder="Enter your email" name="email">
+					<input required type="email" placeholder="Enter your email" name="email">
 	 		</td>
 		</tr>
 	</br>
@@ -32,7 +32,7 @@
 					<label for="password"> Password <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="password" placeholder="Your desired password" name="password">
+					<input type="password" required placeholder="Your desired password" name="password">
 			</td>
 		<tr/>
 		<tr>
@@ -40,7 +40,7 @@
 					<label for="password_confirm"> Confirm your password <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="password" placeholder="Confirm your password" name="password_confirm">
+					<input type="password" required placeholder="Confirm your password" name="password_confirm">
 			</td>
 	  </tr>
 		<tr>

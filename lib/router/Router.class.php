@@ -20,8 +20,10 @@ class Router
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
-		$this->action = $action;
-
+		if(isset(Router::mapTpl[$action]))
+		{
+			$this->action = $action;
+		}
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
