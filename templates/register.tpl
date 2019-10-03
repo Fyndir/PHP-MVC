@@ -3,6 +3,21 @@
 
 	<form action="?action=AddUser" method="POST">
 		<table>
+			<tr>
+				<td>
+						<label for="nom"> Nom <span class="formStar">*</span> :</label>
+				</td>
+				<td>
+						<input  placeholder="Nom" name="Nom">
+				</td>
+		  </tr>
+			<td>
+					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
+			</td>
+			<td>
+					<input  placeholder="Prenom" name="Prenom">
+			</td>
+		</tr>
 		<tr>
 	  	<td>
     		<label for="email">Mail <span class="formStar">*</span> :</label>

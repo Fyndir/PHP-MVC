@@ -1,5 +1,3 @@
-{include file='header.tpl'}
-
 <h2>Recherche</h2>
 
 <form id="patho_search">
@@ -22,6 +20,3 @@
 </ul>
 
 <script type="module" src="js/pathos.js"></script>
-
-{include file='errorMsg.tpl'}
-{include file='footer.tpl'}

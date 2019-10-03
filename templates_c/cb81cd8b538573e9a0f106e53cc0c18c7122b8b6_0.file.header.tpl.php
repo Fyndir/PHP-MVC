@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-03 13:05:17
+/* Smarty version 3.1.33, created on 2019-10-03 14:01:28
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d95f20d089db2_33825283',
+  'unifunc' => 'content_5d95ff3842a636_84670044',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb81cd8b538573e9a0f106e53cc0c18c7122b8b6' => 
     array (
       0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\header.tpl',
-      1 => 1570107912,
+      1 => 1570111241,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d95f20d089db2_33825283 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d95ff3842a636_84670044 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -62,7 +62,7 @@ function content_5d95f20d089db2_33825283 (Smarty_Internal_Template $_smarty_tpl)
             <menu>
                 <nav>
                     <a href="?action">Accueil</a>
-                    <a href="?action=recherche">Recherche</a>
+                <!--    <a href="?action=recherche">Recherche</a>-->
                 </nav>
             </menu>
 

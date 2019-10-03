@@ -12,11 +12,16 @@ class Router
 	// permet de factoriser le code
 	const mapTpl = array(
 		"register" => "templates/register.tpl",
+		"login" => "templates/defaut.tpl",
+		"logout" => "templates/defaut.tpl",
+		"AddUser" => "templates/register.tpl"
 	);
 
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
+		$this->action = $action;
+
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
@@ -29,7 +34,10 @@ class Router
 		{
 			$ret = Router::mapTpl[$this->action];
 		}
+
+		if($this->action=="login")
 		{
+
 			if(isset($_POST['login']) && isset($_POST['pwd']))
 			{
 				if(!empty($_POST['login']) && !empty($_POST['pwd']))
@@ -45,6 +53,8 @@ class Router
 					else
 						{
 						// Pas sur que ce soit la bonne méthode
+							$_SESSION['user'] = $result;
+							//var_dump(	$_SESSION['user'] );
 						}
 					}
 					else
@@ -55,19 +65,22 @@ class Router
 
 		}
 
+		if($this->action=='AddUser')
 		{
-			if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']))
+			if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']) && isset($_POST['Nom']) && isset($_POST['Prenom']))
 			{
-				if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']))
+				if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['Nom']) && !empty($_POST['Prenom']))
 				{
-					$user=$_POST['email'];
+					$Mail=$_POST['email'];
 					$password=$_POST['password'];
 					$password_confirm=$_POST['password_confirm'];
+					$Nom= $_POST['Nom'];
+					$Prenom = $_POST['Prenom'];
 					if(($password=$password_confirm))
 						{
-							//pas besoin de template parce qu'on va sur le default
-							RegisterControler::AddUser($user,$password);
+							RegisterControler::AddUser($Mail,$password,$Nom,$Prenom);
 							// pour eviter l'injection en masse
+							header("Location: /");
 						}
 						else
 						{
@@ -83,10 +96,13 @@ class Router
 			}
 		}
 
+
+		if($this->action=="logout")
 		{
-				$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
-				// RAF : charge keyword + les autres dans des var
+				LoginControler::logout();
 		}
+		$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
+		$this->smarty->assign("ConnectedUser",isset($_SESSION['user'])?$_SESSION['user']:null);
 		return $ret;
 	}
 
