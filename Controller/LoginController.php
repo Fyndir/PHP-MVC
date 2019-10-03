@@ -1,21 +1,9 @@
 <?php
 
   require_once('lib/bd/bd.class.php');
+  require_once('Model/user.php');
 	class LoginControler
   {
-    public static Function log_user($user,$password)
-    {
-      	$maBD = new BD();
-      	$verifPassword = $maBD->requete("SELECT password FROM users where email='$user';");
-        $bddPass=$verifPassword[0][0];
-        $resultat=null;
-        if (password_verify($password,$bddPass))
-        {
-          $resultat=$maBD->requete("SELECT * FROM users where email='$user';");
-          //var_dump($resultat);
-        }
-      	return $resultat[0];
-    }
 
 		public static Function logout()
 		{
@@ -33,7 +21,7 @@
         {
           $user=$_POST['login'];
           $password=$_POST['pwd'];
-          $result=LoginControler::log_user($user,$password);
+          $result=User::log_user($user,$password);
           if (empty($result))
             {
               $smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");

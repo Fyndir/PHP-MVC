@@ -44,8 +44,6 @@ class Router
 		{
 			$this->smarty=RegisterControler::register($this->smarty);
 		}
-
-
 		if($this->action=="logout")
 		{
 				LoginControler::logout();

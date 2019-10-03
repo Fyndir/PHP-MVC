@@ -15,8 +15,9 @@
             <h1>
                 Projet Fil Rouge - Groupe B1
             </h1>
+            <div id="loginForm">
             {if (empty($ConnectedUser))}
-                    <form id="loginForm" action="?action=login" method="POST">
+                    <form  action="?action=login" method="POST">
                         <label for="login">Login :</label>
                         <input type="text" name="login" id="login">
 
@@ -34,6 +35,7 @@
                 <label id="lbhellouser">Bonjour {$ConnectedUser.prenom} {$ConnectedUser.nom}</label>
                 <a href="?action=logout">Deconnexion</a>
               {/if}
+            </div>
             <menu>
                 <nav>
                     <a href="?action">Accueil</a>
