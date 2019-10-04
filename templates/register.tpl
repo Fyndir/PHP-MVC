@@ -1,7 +1,7 @@
 {include file='header.tpl'}
 	<h2> Inscription </h2>
 
-	<form action="?action=AddUser" method="POST">
+	<form action="/AddUser" method="POST">
 		<table>
 			<tr>
 				<td>
