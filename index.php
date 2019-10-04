@@ -40,5 +40,6 @@ else
 	$tpl = $router->processAction();
 	$smarty->display($tpl);
 }
+//var_dump($_SERVER);
 
 ?>

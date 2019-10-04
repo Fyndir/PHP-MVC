@@ -39,7 +39,7 @@ class User
       if (password_verify($password,$bddPass))
       {
         $resultat=$maBD->requete("SELECT * FROM users where email='$user';","User");
-      }    
+      }
       return isset($resultat[0])?$resultat[0]:null;
 
   }
