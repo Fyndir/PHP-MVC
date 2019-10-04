@@ -1,7 +1,22 @@
 <?php
 class User
 {
-  
+  public $nom;
+  public $prenom;
+  public $email;
+  public $password;
+  public $is_admin;
+
+
+
+  function __construct($nom=null,$prenom=null,$email=null,$password=null,$is_admin=0)
+  {
+    $this->nom=$nom;
+    $this->prenom=$prenom;
+    $this->email=$email;
+    $this->password=$password;
+    $this->is_admin=$is_admin;
+  }
 
   public static Function AddUser($Mail,$password,$Nom,$Prenom)
   {
@@ -19,14 +34,14 @@ class User
   {
       $maBD = new BD();
       $verifPassword = $maBD->requete("SELECT password FROM users where email='$user';");
-      $bddPass=$verifPassword[0][0];
+      $bddPass=$verifPassword[0]["password"];
       $resultat=null;
       if (password_verify($password,$bddPass))
       {
-        $resultat=$maBD->requete("SELECT * FROM users where email='$user';");
-        //var_dump($resultat);
-      }
-      return $resultat[0];
+        $resultat=$maBD->requete("SELECT * FROM users where email='$user';","User");
+      }    
+      return isset($resultat[0])?$resultat[0]:null;
+
   }
 }
 

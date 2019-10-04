@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-03 14:02:26
+/* Smarty version 3.1.33, created on 2019-10-04 06:20:33
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\recherche.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d95ff729151a2_42134425',
+  'unifunc' => 'content_5d96e4b16c6e42_89021534',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4811f8925c3a5c0f34d635a5b3f193e90f348cfd' => 
     array (
       0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\recherche.tpl',
-      1 => 1570111338,
+      1 => 1570169906,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d95ff729151a2_42134425 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d96e4b16c6e42_89021534 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Recherche</h2>
 
 <form id="patho_search">
@@ -35,11 +35,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['patho']->value) {
 ?>
     <option value="<?php echo $_smarty_tpl->tpl_vars['patho']->value['desc'];?>
 "/>
-<?php
+    <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </datalist>
+
 
 <!-- RAF : charge keyword + les autres dans des <datalist> -->
 <button type="submit">Rechercher</button>

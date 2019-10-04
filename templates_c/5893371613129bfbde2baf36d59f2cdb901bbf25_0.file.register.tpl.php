@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-03 14:04:51
+/* Smarty version 3.1.33, created on 2019-10-04 06:22:45
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d960003c2d278_48293346',
+  'unifunc' => 'content_5d96e535a455e4_43758541',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5893371613129bfbde2baf36d59f2cdb901bbf25' => 
     array (
       0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\register.tpl',
-      1 => 1570111479,
+      1 => 1570169906,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d960003c2d278_48293346 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d96e535a455e4_43758541 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	<h2> Inscription </h2>
@@ -35,14 +35,14 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 						<label for="nom"> Nom <span class="formStar">*</span> :</label>
 				</td>
 				<td>
-						<input  placeholder="Nom" name="Nom">
+						<input required placeholder="Nom" name="Nom">
 				</td>
 		  </tr>
 			<td>
 					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input  placeholder="Prenom" name="Prenom">
+					<input requiredrequired placeholder="Prenom" name="Prenom">
 			</td>
 		</tr>
 		<tr>
@@ -50,7 +50,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
     		<label for="email">Mail <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="email" placeholder="Enter your email" name="email">
+					<input required type="email" placeholder="Enter your email" name="email">
 	 		</td>
 		</tr>
 	</br>
@@ -59,7 +59,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 					<label for="password"> Password <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="password" placeholder="Your desired password" name="password">
+					<input type="password" required placeholder="Your desired password" name="password">
 			</td>
 		<tr/>
 		<tr>
@@ -67,7 +67,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 					<label for="password_confirm"> Confirm your password <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input type="password" placeholder="Confirm your password" name="password_confirm">
+					<input type="password" required placeholder="Confirm your password" name="password_confirm">
 			</td>
 	  </tr>
 		<tr>

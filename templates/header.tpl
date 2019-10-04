@@ -32,7 +32,7 @@
                         <small id="errorMsg"></small>
                     </form>
               {else}
-                <label id="lbhellouser">Bonjour {$ConnectedUser.prenom} {$ConnectedUser.nom}</label>
+                <label id="lbhellouser">Bonjour {$ConnectedUser->prenom} {$ConnectedUser->nom}</label>
                 <a href="?action=logout">Deconnexion</a>
               {/if}
             </div>

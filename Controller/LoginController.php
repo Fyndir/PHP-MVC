@@ -29,7 +29,7 @@
             }
           else
             {
-              $_SESSION['user'] = $result;
+              $_SESSION['user'] = $result;            
               //var_dump(	$_SESSION['user'] );
             }
           }
