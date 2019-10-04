@@ -2,9 +2,18 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # redirect access for application  files to frontend
+    RewriteRule ^Controller/           index.php [QSA,L]
+    RewriteRule ^lib/                  index.php [QSA,L]
+    RewriteRule ^Model/                index.php [QSA,L]
+    RewriteRule ^src/                  index.php [QSA,L]
+    RewriteRule ^templates/            index.php [QSA,L]
+    RewriteRule ^templates_c/          index.php [QSA,L]
+
     # authorize direct access if we get an existing filename
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
+    # Redirige sauf pour l'action APIlancer par le js
     RewriteRule ^(.*)$ index.php?action=$1 [QSA,L]
 </IfModule>
