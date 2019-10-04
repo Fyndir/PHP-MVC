@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-04 08:52:19
+/* Smarty version 3.1.33, created on 2019-10-04 09:40:40
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9708436d03c6_18888084',
+  'unifunc' => 'content_5d97139819cb59_35442741',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb81cd8b538573e9a0f106e53cc0c18c7122b8b6' => 
     array (
       0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\header.tpl',
-      1 => 1570179135,
+      1 => 1570182035,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9708436d03c6_18888084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d97139819cb59_35442741 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -41,16 +41,20 @@ function content_5d9708436d03c6_18888084 (Smarty_Internal_Template $_smarty_tpl)
             <div id="loginForm">
             <?php if ((empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
                     <form  action="/login" method="POST">
+                      <span class="OneLine">
                         <label for="login">Login :</label>
                         <input type="text" name="login" id="login">
-
+                      </span>
+                      <span class="OneLine">
                         <label for="pwd">Mot de passe :</label>
                         <input type="password" name="pwd" id="pwd">
-
-
+                      </span>
+                      <span class="OneLine">
                             <button type="submit" value="Valider">Valider</button>
-
+                      </span>
+                      <span class="OneLine">
                         <a id="Inscrivez-vous">Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a></a>
+                      </span>
 
                         <small id="errorMsg"></small>
                     </form>
@@ -69,5 +73,6 @@ function content_5d9708436d03c6_18888084 (Smarty_Internal_Template $_smarty_tpl)
             </menu>
 
         </header>
+        <div class="content">
 <?php }
 }

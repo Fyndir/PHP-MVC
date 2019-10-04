@@ -3,5 +3,5 @@
 Creation d'un site php dynamique sur une architecure LAMP.
 
 ## Fonctionnalités
-* Recherche en Ajaxsur le MySql
+* Recherche en Ajax sur le MySql
 * Systeme d'autentification

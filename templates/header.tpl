@@ -18,16 +18,20 @@
             <div id="loginForm">
             {if (empty($ConnectedUser))}
                     <form  action="/login" method="POST">
+                      <span class="OneLine">
                         <label for="login">Login :</label>
                         <input type="text" name="login" id="login">
-
+                      </span>
+                      <span class="OneLine">
                         <label for="pwd">Mot de passe :</label>
                         <input type="password" name="pwd" id="pwd">
-
-
+                      </span>
+                      <span class="OneLine">
                             <button type="submit" value="Valider">Valider</button>
-
+                      </span>
+                      <span class="OneLine">
                         <a id="Inscrivez-vous">Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a></a>
+                      </span>
 
                         <small id="errorMsg"></small>
                     </form>
@@ -44,3 +48,4 @@
             </menu>
 
         </header>
+        <div class="content">
