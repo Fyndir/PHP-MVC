@@ -2476,7 +2476,7 @@ create table users
     prenom varchar(250),
     email varchar(250),
     password varchar(250),
-    is_admin boleaan
+    is_admin bit
   );
 
   insert into users(nom,prenom,email,password,is_admin) values ('admin','admin','admin@monserveur.fr','',1);
