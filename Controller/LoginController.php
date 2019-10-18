@@ -7,7 +7,6 @@
 
 		public static Function logout()
 		{
-			session_start();
 			session_unset();
 			session_destroy();
 			header("Location: /");
@@ -19,6 +18,7 @@
       {
         if(!empty($_POST['login']) && !empty($_POST['pwd']))
         {
+
           $user=$_POST['login'];
           $password=$_POST['pwd'];
           $result=User::log_user($user,$password);
@@ -29,7 +29,7 @@
             }
           else
             {
-              $_SESSION['user'] = $result;            
+              $_SESSION['user'] = $result;
               //var_dump(	$_SESSION['user'] );
             }
           }

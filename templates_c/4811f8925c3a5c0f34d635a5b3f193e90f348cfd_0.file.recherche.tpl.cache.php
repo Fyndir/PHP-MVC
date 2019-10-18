@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-03 17:02:38
-  from 'C:\wamp64\www\TLI4IRC\templates\recherche.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-18 07:02:58
+  from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\recherche.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9629ae8e3896_55214777',
+  'unifunc' => 'content_5da963a2304606_85523802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e3d3b4093975b6d1296aac4c57f7ce2425803706' => 
+    '4811f8925c3a5c0f34d635a5b3f193e90f348cfd' => 
     array (
-      0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\recherche.tpl',
-      1 => 1570122151,
+      0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\recherche.tpl',
+      1 => 1570169906,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9629ae8e3896_55214777 (Smarty_Internal_Template $_smarty_tpl) {
-?><h2>Recherche</h2>
+function content_5da963a2304606_85523802 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3075996305da963a22e6564_02417456';
+?>
+<h2>Recherche</h2>
 
 <form id="patho_search">
 <label for="patho-choice">Choisir une pathologie :</label>

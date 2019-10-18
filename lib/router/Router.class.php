@@ -3,6 +3,7 @@
 require_once 'Controller/SearchController.php';
 require_once 'Controller/LoginController.php';
 require_once 'Controller/RegisterController.php';
+require_once 'Controller/ModifUserController.php';
 
 // permet d'appeler les templates en fct du parametre action et d'appeler les controllers
 class Router
@@ -14,7 +15,9 @@ class Router
 		"register" => "templates/register.tpl",
 		"login" => "templates/defaut.tpl",
 		"logout" => "templates/defaut.tpl",
-		"AddUser" => "templates/register.tpl"
+		"AddUser" => "templates/register.tpl",
+		"ModifUser" => "templates/ModifUser.tpl",
+		"ModifUserBdd" => "templates/defaut.tpl"
 	);
 
 	function __construct($smarty,$action )
@@ -38,7 +41,7 @@ class Router
 		}
 
 		if($this->action=="login")
-		{
+		{			
 			$this->smarty=LoginControler::login($this->smarty);
 		}
 
@@ -54,7 +57,12 @@ class Router
 		{
 				$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
 		}
+		if($this->action=="ModifUserBdd")
+		{
+				ModifUserControler::modif($this->smarty);
+		}
 		$this->smarty->assign("ConnectedUser",isset($_SESSION['user'])?$_SESSION['user']:null);
+		//var_dump(	$this->smarty->tpl_vars["ConnectedUser"]);exit;
 		return $ret;
 	}
 

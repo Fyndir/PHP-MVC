@@ -1,4 +1,6 @@
 <?php
+
+require_once('lib/bd/bd.class.php');
 class User
 {
   public $nom;
@@ -6,8 +8,6 @@ class User
   public $email;
   public $password;
   public $is_admin;
-
-
 
   function __construct($nom=null,$prenom=null,$email=null,$password=null,$is_admin=0)
   {
@@ -32,16 +32,31 @@ class User
 
   public static Function log_user($user,$password)
   {
+
       $maBD = new BD();
       $verifPassword = $maBD->requete("SELECT password FROM users where email='$user';");
       $bddPass=$verifPassword[0]["password"];
-      $resultat=null;
+      $resultat=null;      
       if (password_verify($password,$bddPass))
       {
         $resultat=$maBD->requete("SELECT * FROM users where email='$user';","User");
+
       }
       return isset($resultat[0])?$resultat[0]:null;
 
+  }
+
+  public function update_user()
+  {
+    if(!empty($this->email) && !empty($this->password) && !empty($this->nom) && !empty($this->prenom))
+    {
+        $maBD = new BD();
+        $maBD->requete("update users set nom='$this->nom',prenom='$this->prenom',email='$this->email' where email='$this->email';");
+    }
+    else
+    {
+      // implementation d'une exception
+    }
   }
 }
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-04 06:20:33
+/* Smarty version 3.1.33, created on 2019-10-18 07:04:41
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\recherche.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d96e4b16c6e42_89021534',
+  'unifunc' => 'content_5da964090bf475_34493707',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d96e4b16c6e42_89021534 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da964090bf475_34493707 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Recherche</h2>
 
 <form id="patho_search">

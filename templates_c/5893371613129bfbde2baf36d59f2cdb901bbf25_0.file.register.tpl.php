@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-04 08:46:01
+/* Smarty version 3.1.33, created on 2019-10-18 08:01:02
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9706c93dbfc4_84978745',
+  'unifunc' => 'content_5da9713ed1dd51_64734580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d9706c93dbfc4_84978745 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da9713ed1dd51_64734580 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	<h2> Inscription </h2>

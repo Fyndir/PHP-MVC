@@ -1,10 +1,12 @@
 <?php
 
+require_once('Model/user.php');
 
 session_start();
 require 'lib/smarty-3.1.33/libs/Smarty.class.php';
 require 'lib/router/Router.class.php';
 require 'lib/checkers/checkers.php';
+
 
 $smarty = new Smarty();
 //$smarty->force_compile = true;

@@ -37,13 +37,16 @@
                     </form>
               {else}
                 <label id="lbhellouser">Bonjour {$ConnectedUser->prenom} {$ConnectedUser->nom}</label>
-                <a href="/logout">Deconnexion</a>
+
               {/if}
             </div>
             <menu>
                 <nav>
                     <a href="/">Accueil</a>
-                <!--    <a href="?action=recherche">Recherche</a>-->
+                  {if (!empty($ConnectedUser))}
+                    <a href="/ModifUser">Modification Information</a>
+                    <a href="/logout">Deconnexion</a>          
+                  {/if}
                 </nav>
             </menu>
 

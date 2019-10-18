@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-04 09:40:40
+/* Smarty version 3.1.33, created on 2019-10-18 07:40:36
   from 'C:\Users\Sénid\Documents\GitHub\TLI\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d97139819cb59_35442741',
+  'unifunc' => 'content_5da96c74ee6981_38208139',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb81cd8b538573e9a0f106e53cc0c18c7122b8b6' => 
     array (
       0 => 'C:\\Users\\Sénid\\Documents\\GitHub\\TLI\\templates\\header.tpl',
-      1 => 1570182035,
+      1 => 1571384434,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d97139819cb59_35442741 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da96c74ee6981_38208139 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -62,13 +62,16 @@ function content_5d97139819cb59_35442741 (Smarty_Internal_Template $_smarty_tpl)
                 <label id="lbhellouser">Bonjour <?php echo $_smarty_tpl->tpl_vars['ConnectedUser']->value->prenom;?>
  <?php echo $_smarty_tpl->tpl_vars['ConnectedUser']->value->nom;?>
 </label>
-                <a href="/logout">Deconnexion</a>
+
               <?php }?>
             </div>
             <menu>
                 <nav>
                     <a href="/">Accueil</a>
-                <!--    <a href="?action=recherche">Recherche</a>-->
+                  <?php if ((!empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
+                    <a href="/ModifUser">Modification Information</a>
+                    <a href="/logout">Deconnexion</a>          
+                  <?php }?>
                 </nav>
             </menu>
 
