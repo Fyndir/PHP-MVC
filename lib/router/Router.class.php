@@ -23,10 +23,10 @@ class Router
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
-		if(isset(Router::mapTpl[$action]))
-		{
+		//if(isset(Router::mapTpl[$action]))
+		//{
 			$this->action = $action;
-		}
+		//}
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
@@ -41,7 +41,7 @@ class Router
 		}
 
 		if($this->action=="login")
-		{			
+		{
 			$this->smarty=LoginControler::login($this->smarty);
 		}
 
@@ -53,13 +53,13 @@ class Router
 		{
 				LoginControler::logout();
 		}
-		if($this->action=="")
-		{
-				$this->smarty->assign("ArrayPatho",SearchControler::GetAllPatho());
-		}
 		if($this->action=="ModifUserBdd")
 		{
 				ModifUserControler::modif($this->smarty);
+		}
+		if($this->action=="")
+		{
+			$this->smarty->assign("AllMeridien",	SearchControler::GetAllMeridien());
 		}
 		$this->smarty->assign("ConnectedUser",isset($_SESSION['user'])?$_SESSION['user']:null);
 		//var_dump(	$this->smarty->tpl_vars["ConnectedUser"]);exit;
@@ -70,12 +70,15 @@ class Router
 	function processAPI()
 	{
 		$result="";
-		if($this->action="recherche")
+		if($this->action=="GetAllPatho")
 		{
-			$result=SearchControler::SearchPatho($_GET['search']);
+			$result=SearchControler::GetAllPatho();
+		}
+		if($this->action=="GetDetails")
+		{
+			$result=SearchControler::GetDetails();
 		}
 		return json_encode($result);
-
 	}
 
 

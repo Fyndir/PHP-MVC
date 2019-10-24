@@ -1,7 +1,7 @@
 <?php
 
   require_once('lib/bd/bd.class.php');
-  require_once('Model/user.php');
+  require_once('Services/UserService.php');
 	class ModifUserControler
   {
     public static Function modif($smarty)
@@ -18,7 +18,7 @@
             $_SESSION['user']->nom=$Nom;
             $_SESSION['user']->prenom=$Prenom;
             $_SESSION['user']->email=$Mail;
-            $_SESSION['user']->update_user();
+            UserService::update_user($_SESSION['user']);
           //  header("Location: /");
           }
         }

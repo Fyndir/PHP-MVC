@@ -6,11 +6,11 @@
 		//RAF créer un user sql pour la recherche/ajout en limitant ces droits
 
 		//mettre le nom de votre base de donnée
-		private $dbName = "test";
+		private $dbName = "file_rouge";
 		//donnez le mot de passe de votre bd
 		private $pass = "";
 		//donnez le nom d'utilisateur de la bd (probablement "root") -- > PAS BIEN !!!!!!!!!
-		private $user = "admin";
+		private $user = "root";
 
 
 		// retourne une connexion PDO à la BDD

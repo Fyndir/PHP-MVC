@@ -1,7 +1,5 @@
 <?php
-
-  require_once('lib/bd/bd.class.php');
-  require_once('Model/user.php');
+  require_once('Services/UserService.php');
 	class LoginControler
   {
 
@@ -21,7 +19,7 @@
 
           $user=$_POST['login'];
           $password=$_POST['pwd'];
-          $result=User::log_user($user,$password);
+          $result=UserService::log_user($user,$password);        
           if (empty($result))
             {
               $smarty->assign("ErrorMessage","L'utilisateur n'existe pas ou les parametres sont incorrectes");

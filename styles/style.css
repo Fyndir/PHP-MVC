@@ -24,16 +24,6 @@ h2
     margin: auto;
     margin-bottom: 50px;
 }
-
-
-h3
-{
-    font-size: 30px;
-    text-align: left;
-    width: 60%;
-}
-
-
 menu
 {
     margin-top: 0;
@@ -51,7 +41,6 @@ nav
     display: block;
     padding: 10px;
 }
-
 nav a
 {
     color: white;
@@ -95,7 +84,13 @@ footer
     color: #FFFFFF;
 }
 
-#Inscrivez-vous
+table
 {
-  font-size:80%;
+  margin: 0 auto;
+  text-align:  left;
+}
+table thead tr
+{
+  text-align:  center;
+  border: 1px solid black;
 }

@@ -1,21 +1,26 @@
 <?PHP
-require_once('lib/bd/bd.class.php');
-require_once('Model/Patho.php');
+require_once('Services/PathoService.php');
 class SearchControler
 {
   public static Function GetAllPatho()
   {
-    $maBD = new BD();
-    $resultat = $maBD->requete("SELECT `desc` FROM patho");
+    $resultat=PathoService::GetAllPatho();
     return $resultat;
   }
 
-  public static Function SearchPatho($patho)
+  public static Function GetAllMeridien()
   {
-    $maBD = new BD();
-    $resultat=Patho::GetAllPatho();
-    //$resultat = $maBD->requete("SELECT `desc` FROM patho where `desc` like '%$patho%'");
+    $resultat=PathoService::GetAllMeridien();
     return $resultat;
+  }
+
+  public static function GetDetails()
+  {
+    $id=$_GET["idPatho"];
+    $patho=PathoService::GetPatho($id);
+    PathoService::GetKeywords($patho);
+    PathoService::GetSymptomes($patho);
+    return $patho;
   }
 }
 ?>
