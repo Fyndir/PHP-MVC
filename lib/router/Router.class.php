@@ -23,10 +23,7 @@ class Router
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
-		//if(isset(Router::mapTpl[$action]))
-		//{
-			$this->action = $action;
-		//}
+		$this->action = $action;		
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
@@ -39,15 +36,13 @@ class Router
 		{
 			$ret = Router::mapTpl[$this->action];
 		}
-
 		if($this->action=="login")
 		{
-			$this->smarty=LoginControler::login($this->smarty);
+		  LoginControler::login($this->smarty);
 		}
-
 		if($this->action=='AddUser')
 		{
-			$this->smarty=RegisterControler::register($this->smarty);
+			RegisterControler::register($this->smarty);
 		}
 		if($this->action=="logout")
 		{
@@ -57,12 +52,13 @@ class Router
 		{
 				ModifUserControler::modif($this->smarty);
 		}
-		if($this->action=="")
+
+
+		if($ret=="templates/defaut.tpl")
 		{
 			$this->smarty->assign("AllMeridien",	SearchControler::GetAllMeridien());
 		}
 		$this->smarty->assign("ConnectedUser",isset($_SESSION['user'])?$_SESSION['user']:null);
-		//var_dump(	$this->smarty->tpl_vars["ConnectedUser"]);exit;
 		return $ret;
 	}
 

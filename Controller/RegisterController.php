@@ -31,7 +31,6 @@
               $smarty->assign("ErrorMessage","Les parametres sont mal renseignés");
           }
       }
-      return $smarty;
     }
   }
 

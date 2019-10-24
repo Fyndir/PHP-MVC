@@ -28,7 +28,6 @@
         header("Location: /");
         //var_dump($_SESSION['user']);exit;
       }
-      return $smarty;
     }
   }
 

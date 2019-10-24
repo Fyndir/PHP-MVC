@@ -10,7 +10,7 @@ class SearchControler
 
   public static Function GetAllMeridien()
   {
-    $resultat=PathoService::GetAllMeridien();
+    $resultat=PathoService::GetAllMeridien();  
     return $resultat;
   }
 
