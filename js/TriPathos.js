@@ -23,4 +23,9 @@ function filtrer()
 MeridienChoise.addEventListener("change" , filtrer);
 
 // permet le clic sur l'élément pour afficher/cacher les mots clef et les symptome
-document.getElementById('searchResult').addEventListener('click',revealKeywordSymptome(event,data));
+document.getElementById('searchResult').addEventListener('click',callRevealKeywordSymptome);
+
+function callRevealKeywordSymptome()
+{
+	revealKeywordSymptome(event,data)
+}
