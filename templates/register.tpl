@@ -15,7 +15,7 @@
 					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input requiredrequired placeholder="Prenom" name="Prenom">
+					<input required placeholder="Prenom" name="Prenom">
 			</td>
 		</tr>
 		<tr>

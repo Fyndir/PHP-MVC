@@ -17,7 +17,7 @@
 					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input requiredrequired placeholder="Prenom" value="{$ConnectedUser->prenom}" name="Prenom">
+					<input required placeholder="Prenom" value="{$ConnectedUser->prenom}" name="Prenom">
 			</td>
 		</tr>
 		<tr>
@@ -28,7 +28,7 @@
 					<input required type="email" placeholder="Enter your email" value="{$ConnectedUser->email}" name="email">
 	 		</td>
 		</tr>
-	</br>	
+	</br>
 
 		<tr>
 			<td>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-27 12:50:47
+/* Smarty version 3.1.33, created on 2019-10-27 14:34:56
   from 'C:\wamp64\www\TLI4IRC\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db592a7f24c27_51137962',
+  'unifunc' => 'content_5db5ab1025dea7_67119990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9cf568cf8f8db9eb0ccf0b239e5305e219dc8fdb' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\header.tpl',
-      1 => 1572180644,
+      1 => 1572186881,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db592a7f24c27_51137962 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db5ab1025dea7_67119990 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -53,7 +53,7 @@ function content_5db592a7f24c27_51137962 (Smarty_Internal_Template $_smarty_tpl)
                             <button type="submit" value="Valider">Valider</button>
                       </span>
                       <span class="OneLine">
-                        <a id="Inscrivez-vous">Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a></a>
+                        Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a>
                       </span>
 
                         <small id="errorMsg"></small>
@@ -77,6 +77,6 @@ function content_5db592a7f24c27_51137962 (Smarty_Internal_Template $_smarty_tpl)
             </menu>
 
         </header>
-        <div class="content">
+        <main class="content">
 <?php }
 }

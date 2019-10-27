@@ -16,7 +16,7 @@ import {displayData,revealKeywordSymptome} from "./lib.js"
 	// permet le clic sur l'élément pour afficher/cacher les mots clef et les symptome
 	document.getElementById('searchResult').addEventListener('click',callRevealKeywordSymptome);
 
-	function callRevealKeywordSymptome()
+	function callRevealKeywordSymptome(event)
 	{
 		revealKeywordSymptome(event,data)
 	}

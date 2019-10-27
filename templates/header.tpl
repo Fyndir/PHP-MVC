@@ -30,7 +30,7 @@
                             <button type="submit" value="Valider">Valider</button>
                       </span>
                       <span class="OneLine">
-                        <a id="Inscrivez-vous">Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a></a>
+                        Pas de compte? Inscrivez-vous en <a id="Inscrivez-vous" href = "/register"> cliquant ici </a>
                       </span>
 
                         <small id="errorMsg"></small>
@@ -52,4 +52,4 @@
             </menu>
 
         </header>
-        <div class="content">
+        <main class="content">

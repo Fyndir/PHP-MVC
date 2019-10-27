@@ -7,7 +7,7 @@
   <span class="OneLine">
     <label for="keywordschoise"> keywords </label>
     <input type="text" id="keywordschoise">
-    <button type="submit" value="Valider">Valider</button>
+    <button type="submit" >recherche</button>
   </span>
 </form>
 <table>

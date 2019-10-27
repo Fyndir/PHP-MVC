@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-27 13:22:04
+/* Smarty version 3.1.33, created on 2019-10-27 14:26:51
   from 'C:\wamp64\www\TLI4IRC\templates\SearchByKeyWord.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db599fc235710_81971687',
+  'unifunc' => 'content_5db5a92b29d0e2_75150650',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f18930bbe94bfd57e15c09243630d02aaeddb506' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\SearchByKeyWord.tpl',
-      1 => 1572182431,
+      1 => 1572186405,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db599fc235710_81971687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db5a92b29d0e2_75150650 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if ((empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
   <h2> Necessite d'etre connecté </h2>
@@ -33,7 +33,7 @@ if ((empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
   <span class="OneLine">
     <label for="keywordschoise"> keywords </label>
     <input type="text" id="keywordschoise">
-    <button type="submit" value="Valider">Valider</button>
+    <button type="submit" >recherche</button>
   </span>
 </form>
 <table>
