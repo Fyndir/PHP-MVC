@@ -17,13 +17,14 @@ class Router
 		"logout" => "templates/defaut.tpl",
 		"AddUser" => "templates/register.tpl",
 		"ModifUser" => "templates/ModifUser.tpl",
-		"ModifUserBdd" => "templates/defaut.tpl"
+		"ModifUserBdd" => "templates/defaut.tpl",
+		"SearchByKeywords" => "templates/SearchByKeyWord.tpl"
 	);
 
 	function __construct($smarty,$action )
 	{
 		$this->smarty = $smarty;
-		$this->action = $action;		
+		$this->action = $action;
 	}
 
 /// Permet de renvoyer les templates en fonction du parametre action
@@ -52,8 +53,6 @@ class Router
 		{
 				ModifUserControler::modif($this->smarty);
 		}
-
-
 		if($ret=="templates/defaut.tpl")
 		{
 			$this->smarty->assign("AllMeridien",	SearchControler::GetAllMeridien());
@@ -73,6 +72,10 @@ class Router
 		if($this->action=="GetDetails")
 		{
 			$result=SearchControler::GetDetails();
+		}
+		if($this->action=="SearchByKeywords")
+		{
+			$result=SearchControler::SearchByKeywords();
 		}
 		return json_encode($result);
 	}

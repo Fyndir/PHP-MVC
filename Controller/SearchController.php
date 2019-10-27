@@ -10,7 +10,7 @@ class SearchControler
 
   public static Function GetAllMeridien()
   {
-    $resultat=PathoService::GetAllMeridien();  
+    $resultat=PathoService::GetAllMeridien();
     return $resultat;
   }
 
@@ -21,6 +21,12 @@ class SearchControler
     PathoService::GetKeywords($patho);
     PathoService::GetSymptomes($patho);
     return $patho;
+  }
+  public static function SearchByKeywords()
+  {
+      $kw=$_GET["keywords"];
+      $patho=PathoService::SearchByKeywords($kw);
+      return $patho;  
   }
 }
 ?>

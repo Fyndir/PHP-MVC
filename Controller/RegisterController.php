@@ -1,7 +1,6 @@
 <?php
 
-  require_once('lib/bd/bd.class.php');
-  require_once('Model/user.php');
+  require_once('Services/UserService.php');
 	class RegisterControler
   {
     public static Function register($smarty)
@@ -17,7 +16,7 @@
           $Prenom = $_POST['Prenom'];
           if(($password==$password_confirm))
             {
-              User::AddUser($Mail,$password,$Nom,$Prenom);
+              UserService::AddUser($Mail,$password,$Nom,$Prenom);
               // pour eviter l'injection en masse
               header("Location: /");
             }

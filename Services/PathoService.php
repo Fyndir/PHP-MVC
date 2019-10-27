@@ -32,12 +32,9 @@ class PathoService
 
   public static function SearchByKeywords($keyword)
   {
-
-  }
-
-  public static function SearchBySymptome($keyword)
-  {
-
+    $maBD = new BD();
+    $patho = $maBD->requete("SELECT p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK where k.name like '%$keyword%' ","Patho");
+    return $patho;
   }
 
   public static Function GetAllMeridien()

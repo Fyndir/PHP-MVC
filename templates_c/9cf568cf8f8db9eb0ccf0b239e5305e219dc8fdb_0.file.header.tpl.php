@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 17:59:19
+/* Smarty version 3.1.33, created on 2019-10-27 12:50:47
   from 'C:\wamp64\www\TLI4IRC\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da9fd7776b991_39307307',
+  'unifunc' => 'content_5db592a7f24c27_51137962',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9cf568cf8f8db9eb0ccf0b239e5305e219dc8fdb' => 
     array (
       0 => 'C:\\wamp64\\www\\TLI4IRC\\templates\\header.tpl',
-      1 => 1571421479,
+      1 => 1572180644,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da9fd7776b991_39307307 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db592a7f24c27_51137962 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!Doctype html>
 <html lang="fr">
 
@@ -70,7 +70,8 @@ function content_5da9fd7776b991_39307307 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="/">Accueil</a>
                   <?php if ((!empty($_smarty_tpl->tpl_vars['ConnectedUser']->value))) {?>
                     <a href="/ModifUser">Modification Information</a>
-                    <a href="/logout">Deconnexion</a>          
+                    <a href="/SearchByKeywords">Recherche par mots clef</a>
+                    <a href="/logout">Deconnexion</a>
                   <?php }?>
                 </nav>
             </menu>

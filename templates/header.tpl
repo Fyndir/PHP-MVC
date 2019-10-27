@@ -45,7 +45,8 @@
                     <a href="/">Accueil</a>
                   {if (!empty($ConnectedUser))}
                     <a href="/ModifUser">Modification Information</a>
-                    <a href="/logout">Deconnexion</a>          
+                    <a href="/SearchByKeywords">Recherche par mots clef</a>
+                    <a href="/logout">Deconnexion</a>
                   {/if}
                 </nav>
             </menu>
