@@ -8,17 +8,17 @@ import {displayData,revealKeywordSymptome} from "./lib.js"
 		event.preventDefault();
 		// Appel à l'API pour avoir les resultats en json
 		let keywords = document.getElementById("keywordschoise");
-		var answer = await fetch("?API=SearchByKeywords&keywords="+keywords.value);
+		var answer = await fetch("?API=SearchByKeywords&keywords="+encodeURI(keywords.value));
 		data = await answer.json();
 		displayData(data);
-		history.replaceState(null,null,"/SearchByKeywords/"+keywords.value)
+		history.replaceState(null,null,"/SearchByKeywords/"+encodeURI(keywords.value));
 	});
 
 	window.addEventListener("load", async function(event)
 	{
 		// Appel à l'API pour avoir les resultats en json
 		let keywords = document.getElementById("keywordschoise");
-		keywords.value = location.pathname.slice(18);
+		keywords.value = decodeURI(location.pathname.slice(18));
 		var answer = await fetch("?API=SearchByKeywords&keywords="+keywords.value);
 		data = await answer.json();
 		displayData(data);
