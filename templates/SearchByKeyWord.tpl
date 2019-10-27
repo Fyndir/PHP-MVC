@@ -27,7 +27,7 @@
 
 </table>
 
-<script type="module" src="js/SearchPatho.js"></script>
+<script type="module" src="/js/SearchPatho.js"></script>
 {/if}
 {include file='errorMsg.tpl'}
 {include file='footer.tpl'}

@@ -33,7 +33,7 @@ class Router
 		//var_dump($this->action);
 		$ret = "templates/defaut.tpl";
 		$this->smarty->assign("ErrorMessage","");
-		if($this->action!="")
+		if($this->action!=""&& array_key_exists($this->action,Router::mapTpl))
 		{
 			$ret = Router::mapTpl[$this->action];
 		}

@@ -25,4 +25,4 @@
 
 </table>
 
-<script type="module" src="js/TriPathos.js"></script>
+<script type="module" src="/js/TriPathos.js"></script>

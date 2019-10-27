@@ -28,7 +28,7 @@
           else
             {
               $_SESSION['user'] = $result;
-              //var_dump(	$_SESSION['user'] );
+              header("Location: /");          
             }
           }
           else
