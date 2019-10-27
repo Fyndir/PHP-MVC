@@ -32,8 +32,26 @@ class PathoService
 
   public static function SearchByKeywords($keyword)
   {
+    if ($keyword =="")
+    {
+      return PathoService::GetAllPatho();
+    }
+    $arrayKeyWord=explode(" ",trim($keyword));
+    $ClauseAndSQL = "where ";
+    foreach ($arrayKeyWord as $key=>$value)
+    {
+      if(count($arrayKeyWord)==$key+1)
+      {
+          $ClauseAndSQL .= "k.name like '%$value%' group by p.idP,p.`desc`,  p.type, m.`code`,m.nom, m.element,m.yin having count(p.idP) = ".($key+1);
+      }
+      else
+      {
+          $ClauseAndSQL .= "k.name like '%$value%' or ";
+      }
+    }
     $maBD = new BD();
-    $patho = $maBD->requete("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK where k.name like '%$keyword%' ","Patho");
+  //  var_dump("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL);exit;
+    $patho = $maBD->requete("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL ,"Patho");
     return $patho;
   }
 
