@@ -1,10 +1,13 @@
 import {displayData,revealKeywordSymptome} from "./lib.js"
 
 	let data;
-	let keywords = document.getElementById("keywordschoise");
-	keywords.addEventListener("change", async function(event)
+	let SearchForm = document.getElementById("SearchForm");
+	SearchForm.addEventListener("submit", async function(event)
 	{
+		//empeche la page de refresh
+		event.preventDefault();
 		// Appel à l'API pour avoir les resultats en json
+		let keywords = document.getElementById("keywordschoise");
 		var answer = await fetch("?API=SearchByKeywords&keywords="+keywords.value);
 		data = await answer.json();
 		displayData(data);

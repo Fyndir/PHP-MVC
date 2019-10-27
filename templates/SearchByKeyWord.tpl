@@ -3,10 +3,13 @@
   <h2> Necessite d'etre connecté </h2>
 {else}
 <h2>recherches des pathologies par mots clefs </h2>
-<form>
-  <label for="keywordschoise"> keywords </label>
-  <input type="text" id="keywordschoise">
-  </form>
+<form id="SearchForm">
+  <span class="OneLine">
+    <label for="keywordschoise"> keywords </label>
+    <input type="text" id="keywordschoise">
+    <button type="submit" value="Valider">Valider</button>
+  </span>
+</form>
 <table>
   <thead>
     <tr>
