@@ -23,6 +23,7 @@ class PathoService
     $AllPatho = $maBD->requete("SELECT   distinct idP as 'id',   `desc` as 'desc',   type as 'type',   `code` as 'CodeMeridien',   nom as MeridienNom,   element as MeridienElement,   yin as MeridienYin FROM `patho` p  join meridien m on m.code=p.mer ","Patho");
     return $AllPatho;
   }
+
   public static Function GetPatho($id)
   {
     $maBD = new BD();
@@ -60,6 +61,13 @@ class PathoService
     $maBD = new BD();
     $AllMeridien = $maBD->requete("SELECT distinct `code`,`nom` FROM `meridien` ");
     return $AllMeridien;
+  }
+
+  public static Function GetAllTypePatho()
+  {
+    $maBD = new BD();
+    $AllTypePatho = $maBD->requete("SELECT distinct `type` FROM `patho` ");
+    return $AllTypePatho;
   }
 
 }

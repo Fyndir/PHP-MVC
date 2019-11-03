@@ -14,6 +14,12 @@ class SearchControler
     return $resultat;
   }
 
+  public static Function GetAllTypePatho()
+  {
+    $resultat=PathoService::GetAllTypePatho();
+    return $resultat;
+  }
+
   public static function GetDetails()
   {
     $id=$_GET["idPatho"];
@@ -26,7 +32,7 @@ class SearchControler
   {
       $kw=$_GET["keywords"];
       $patho=PathoService::SearchByKeywords($kw);
-      return $patho;  
+      return $patho;
   }
 }
 ?>
