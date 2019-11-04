@@ -1,6 +1,5 @@
 <?php
 
-require_once('lib/bd/bd.class.php');
 class User
 {
   public $nom;

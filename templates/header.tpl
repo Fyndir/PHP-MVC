@@ -47,7 +47,7 @@
                     <a href="/ModifUser">Modification Information</a>
                     <a href="/SearchByKeywords">Recherche par mots clef</a>
                     <a href="/logout">Deconnexion</a>
-                  {/if}
+                  {/if}              
                 </nav>
             </menu>
 

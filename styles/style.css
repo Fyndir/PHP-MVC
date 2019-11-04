@@ -38,17 +38,15 @@ nav
 {
     margin: 0;
     padding: 0;
-    display: block;
+    display: flex;
     padding: 10px;
+    justify-content: space-around;
+
 }
 nav a
 {
     color: white;
-    text-decoration: none;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    padding-left: 9%;
-    padding-right: 9%;
+    text-decoration: none;    
 }
 header
 {
