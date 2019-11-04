@@ -1,5 +1,6 @@
 const searchResult = document.getElementById('searchResult');
 
+/// fonction qui affiche les pathologies
 export function displayData(list)
  {
 	// traitement de la data pour l'afficher dans le HTML
@@ -18,6 +19,7 @@ export function displayData(list)
 	).join("");
 }
 
+/// fonction du affiche les mots clef et les sympthones liés à la pathologie cliquée
 export async function revealKeywordSymptome(event,data)
 {
 	const tr = event.target.closest('.openabled');

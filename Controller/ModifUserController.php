@@ -4,6 +4,8 @@
   require_once('Services/UserService.php');
 	class ModifUserControler
   {
+
+    /// Permet de modifier un user dans la bdd a l'aide des données de la vue
     public static Function modif($smarty)
     {
       if (!empty($_SESSION['user']))
@@ -19,14 +21,12 @@
             $_SESSION['user']->prenom=$Prenom;
             $_SESSION['user']->email=$Mail;
             UserService::update_user($_SESSION['user']);
-          //  header("Location: /");
           }
         }
       }
       else
       {
         header("Location: /");
-        //var_dump($_SESSION['user']);exit;
       }
     }
   }

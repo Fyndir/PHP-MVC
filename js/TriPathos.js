@@ -13,6 +13,7 @@ window.addEventListener("load", async function(event)
 	displayData(data);
 });
 
+/// Fonction qui filtre les données en fct des filtre de la vue
 function filtrer()
 {
 		const filtered = data.filter(function(item) {

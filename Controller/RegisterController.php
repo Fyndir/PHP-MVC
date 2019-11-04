@@ -3,6 +3,7 @@
   require_once('Services/UserService.php');
 	class RegisterControler
   {
+    /// Permet d'ajouter un user dans la bdd a l'aide des données de la vue
     public static Function register($smarty)
     {
       if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']) && isset($_POST['Nom']) && isset($_POST['Prenom']))

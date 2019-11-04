@@ -28,7 +28,7 @@
 			return $db;
 		}
 
-		// retourne le resultat de la requete passer en parametre sous forme d'un tableau
+		// retourne le resultat de la requete passer en parametre sous forme de la class passer en deuxieme parametre , si null elle le retourne en tableau
 		public function requete($sql,$class=null)
 		{
 				$resu = null;

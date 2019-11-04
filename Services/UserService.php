@@ -1,6 +1,7 @@
 <?php
 class UserService
 {
+  /// Ajoute un user dans la bdd
   public static Function AddUser($Mail,$Password,$Nom,$Prenom)
   {
     // je ne sais pas si la verif est necessaire
@@ -13,6 +14,7 @@ class UserService
     }
   }
 
+  /// Verifie que l'utilisateur correspond au parametre et le retourne
   public static Function log_user($mail,$password)
   {
       $maBD = new BD();
@@ -28,6 +30,7 @@ class UserService
 
   }
 
+  /// met a jour les données de l'utilisateur passer en parametre
   public static function update_user($user)
   {
     if(!empty($user->email) && !empty($user->password) && !empty($user->nom) && !empty($user->prenom))

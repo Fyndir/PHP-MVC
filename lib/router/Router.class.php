@@ -30,7 +30,6 @@ class Router
 /// Permet de renvoyer les templates en fonction du parametre action
 	function processAction()
 	{
-		//var_dump($this->action);
 		$ret = "templates/defaut.tpl";
 		$this->smarty->assign("ErrorMessage","");
 		if($this->action!=""&& array_key_exists($this->action,Router::mapTpl))

@@ -2,7 +2,7 @@
   require_once('Services/UserService.php');
 	class LoginControler
   {
-
+    /// Deconnecte l'user et detruit la session
 		public static Function logout()
 		{
 			session_unset();
@@ -10,6 +10,7 @@
 			header("Location: /");
 		}
 
+    /// permet d'interoger le service pour log l'utilisateur à l'aide des infos pris dans la view
     public static Function login($smarty)
     {
       if(isset($_POST['login']) && isset($_POST['pwd']))
