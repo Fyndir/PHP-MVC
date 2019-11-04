@@ -7,7 +7,7 @@ import {displayData,revealKeywordSymptome} from "./lib.js"
 window.addEventListener("load", async function(event)
 {
 	// Appel à l'API pour avoir les resultats en json
-	var answer = await fetch("?API=GetAllPatho");
+	var answer = await fetch("/?API=GetAllPatho");
 	data = await answer.json();
 
 	displayData(data);

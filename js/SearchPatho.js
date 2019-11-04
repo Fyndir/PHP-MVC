@@ -8,7 +8,7 @@ import {displayData,revealKeywordSymptome} from "./lib.js"
 		event.preventDefault();
 		// Appel à l'API pour avoir les resultats en json
 		let keywords = document.getElementById("keywordschoise");
-		var answer = await fetch("?API=SearchByKeywords&keywords="+encodeURI(keywords.value));
+		var answer = await fetch("/?API=SearchByKeywords&keywords="+encodeURI(keywords.value));
 		data = await answer.json();
 		displayData(data);
 		history.replaceState(null,null,"/SearchByKeywords/"+encodeURI(keywords.value));
@@ -19,7 +19,7 @@ import {displayData,revealKeywordSymptome} from "./lib.js"
 		// Appel à l'API pour avoir les resultats en json
 		let keywords = document.getElementById("keywordschoise");
 		keywords.value = decodeURI(location.pathname.slice(18));
-		var answer = await fetch("?API=SearchByKeywords&keywords="+keywords.value);
+		var answer = await fetch("/?API=SearchByKeywords&keywords="+keywords.value);
 		data = await answer.json();
 		displayData(data);
 	});

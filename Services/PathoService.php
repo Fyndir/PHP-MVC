@@ -6,14 +6,14 @@ class PathoService
   public static function GetSymptomes($patho)
   {
       $maBD = new BD();
-      $symptomes = $maBD->requete("SELECT distinct s.`desc` FROM `symptome` s join symptpatho sp on sp.ids=s.ids join patho p on p.idP=sp.idP where p.idp= $patho->id");
+      $symptomes = $maBD->requete("SELECT distinct s.`desc` FROM `symptome` s join symptPatho sp on sp.ids=s.ids join patho p on p.idP=sp.idP where p.idp= $patho->id");
       $patho->Symptomes=$symptomes;
   }
   // retourne tous les mots clefs d'une patho dans l'attribut $symptomes
   public static function GetKeywords($patho)
   {
       $maBD = new BD();
-      $Motclef = $maBD->requete("SELECT distinct k.name FROM keywords k join keysympt ks on ks.idK=k.idK join `symptome` s on s.ids=ks.idS join symptpatho sp on sp.ids=s.ids join patho p on p.idP=sp.idP where p.idp=$patho->id");
+      $Motclef = $maBD->requete("SELECT distinct k.name FROM keywords k join keySympt ks on ks.idK=k.idK join `symptome` s on s.ids=ks.idS join symptPatho sp on sp.ids=s.ids join patho p on p.idP=sp.idP where p.idp=$patho->id");
       $patho->Motclef=$Motclef;
   }
 
@@ -51,8 +51,8 @@ class PathoService
       }
     }
     $maBD = new BD();
-  //  var_dump("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL);exit;
-    $patho = $maBD->requete("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptpatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keysympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL ,"Patho");
+  //  var_dump("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptPatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keySympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL);exit;
+    $patho = $maBD->requete("SELECT distinct p.idP as 'id', p.`desc` as 'desc', p.type as 'type', m.`code` as 'CodeMeridien', m.nom as MeridienNom, m.element as MeridienElement, m.yin as MeridienYin FROM `patho` p join meridien m on m.code=p.mer join symptPatho sp on p.idP= sp.idP join symptome s on s.idS= sp.idS join keySympt ks on ks.idS=s.idS JOIN keywords k on k.idK=ks.idK ".$ClauseAndSQL ,"Patho");
     return $patho;
   }
 

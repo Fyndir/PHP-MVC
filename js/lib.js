@@ -28,7 +28,7 @@ export async function revealKeywordSymptome(event,data)
 	const index = [...tr.parentNode.children].indexOf(tr);
 
 	if (!data[index].Symptomes) {
-		const response = await fetch('?API=GetDetails&idPatho=' + data[index].id);
+		const response = await fetch('/?API=GetDetails&idPatho=' + data[index].id);
 		data[index] = await response.json();
 	}
 
