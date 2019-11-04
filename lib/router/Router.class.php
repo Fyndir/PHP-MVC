@@ -55,8 +55,7 @@ class Router
 		}
 		if($ret=="templates/defaut.tpl")
 		{
-			$this->smarty->assign("AllMeridien",	SearchControler::GetAllMeridien());
-			$this->smarty->assign("AllTypePatho",	SearchControler::GetAllTypePatho());		
+			SearchControler::GetAllMeridienTypePatho($this->smarty);				
 		}
 		$this->smarty->assign("ConnectedUser",isset($_SESSION['user'])?$_SESSION['user']:null);
 		return $ret;

@@ -34,5 +34,11 @@ class SearchControler
       $patho=PathoService::SearchByKeywords($kw);
       return $patho;
   }
+  public static function GetAllMeridienTypePatho($smarty)
+  {
+    $smarty->assign("AllMeridien",	SearchControler::GetAllMeridien());
+    $smarty->assign("AllTypePatho",	SearchControler::GetAllTypePatho());
+  }
+
 }
 ?>

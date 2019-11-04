@@ -49,5 +49,6 @@
 			</td>
 		</tr>
 	</table>
+	</form>
 	{include file='errorMsg.tpl'}
   {include file='footer.tpl'}

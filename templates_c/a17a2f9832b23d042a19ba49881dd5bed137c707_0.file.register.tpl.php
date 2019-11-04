@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-04 08:55:07
+/* Smarty version 3.1.33, created on 2019-11-04 12:50:06
   from '/home/fyndir/PHP-MVC/templates/register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbfe76b511172_03608548',
+  'unifunc' => 'content_5dc01e7eaa2ec7_88417407',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a17a2f9832b23d042a19ba49881dd5bed137c707' => 
     array (
       0 => '/home/fyndir/PHP-MVC/templates/register.tpl',
-      1 => 1571395985,
+      1 => 1572871794,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dbfe76b511172_03608548 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dc01e7eaa2ec7_88417407 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	<h2> Inscription </h2>
@@ -42,7 +42,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 					<label for="prenom"> Prenom <span class="formStar">*</span> :</label>
 			</td>
 			<td>
-					<input requiredrequired placeholder="Prenom" name="Prenom">
+					<input required placeholder="Prenom" name="Prenom">
 			</td>
 		</tr>
 		<tr>
@@ -76,6 +76,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 			</td>
 		</tr>
 	</table>
+	</form>
 	<?php $_smarty_tpl->_subTemplateRender('file:errorMsg.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   <?php $_smarty_tpl->_subTemplateRender('file:footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
